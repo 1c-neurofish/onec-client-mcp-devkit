@@ -14,6 +14,7 @@ Each task must pass through the following stages, in order:
 
 ## Code Style
 - When editing BSL modules, follow `docs/code-style.md`.
+- Для методов не добавляем префикс (например MCP).
 
 ## Branching & Commits
 - Large tasks must be done in their own branch: `feat/<issue-i>-<short-description>`.
