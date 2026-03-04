@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonForm xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d39d7e8e-db50-4fdb-ae55-c82963201214">
+  <name>Мсп_УправлениеMCP</name>
+  <synonym>
+    <key>ru</key>
+    <value>Управление MCP</value>
+  </synonym>
+  <usePurposes>PersonalComputer</usePurposes>
+</mdclass:CommonForm>
