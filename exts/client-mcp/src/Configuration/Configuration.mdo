@@ -26,7 +26,7 @@
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
   <commonTemplates>CommonTemplate.мсп_webTransport</commonTemplates>
-  <commonModules>CommonModule.мсп_MCPКлиент</commonModules>
-  <commonModules>CommonModule.мсп_ИнструментыКлиент</commonModules>
-  <commonModules>CommonModule.мсп_СерверКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_MCPКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ИнструментыКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_СерверКлиент</commonModules>
 </mdclass:Configuration>
