@@ -28,6 +28,7 @@
   <subsystems>Subsystem.Мсп_MCP</subsystems>
   <subsystems>Subsystem.Мсп_Провайдеры</subsystems>
   <commonTemplates>CommonTemplate.Мсп_webTransport</commonTemplates>
+  <commonModules>CommonModule.Мсп_ИнструментДолгаяОперацияКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментИнфоИБКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментСложениеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментыКлиент</commonModules>
