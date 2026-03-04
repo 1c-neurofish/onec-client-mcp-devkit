@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f3a78697-fe08-4d5d-bdf6-38b2afd5ee44">
+  <name>Мсп_Провайдеры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Провайдеры MCP</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>false</includeInCommandInterface>
+  <content>CommonModule.Мсп_ИнструментИнфоИБКлиент</content>
+  <content>CommonModule.Мсп_ИнструментСложениеКлиент</content>
+</mdclass:Subsystem>
