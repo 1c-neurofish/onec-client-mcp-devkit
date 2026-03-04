@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a68bb02d-e5cd-4733-8c34-01494b96d5bc">
+  <name>Мсп_MCP</name>
+  <synonym>
+    <key>ru</key>
+    <value>MCP</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>CommonModule.Мсп_MCPКлиент</content>
+  <content>CommonModule.Мсп_ИнструментыКлиент</content>
+  <content>CommonModule.Мсп_ЛогированиеКлиент</content>
+  <content>CommonModule.Мсп_ПротоколMCPКлиент</content>
+  <content>CommonModule.Мсп_РеестрMCPКлиент</content>
+  <content>CommonModule.Мсп_СерверКлиент</content>
+  <content>CommonForm.Мсп_УправлениеMCP</content>
+  <content>CommonCommand.Мсп_УправлениеMCP</content>
+  <content>CommonTemplate.Мсп_webTransport</content>
+</mdclass:Subsystem>
