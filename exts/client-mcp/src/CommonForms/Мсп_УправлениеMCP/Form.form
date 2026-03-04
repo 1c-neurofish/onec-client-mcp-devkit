@@ -6,7 +6,7 @@
   </title>
   <items xsi:type="form:FormGroup">
     <name>ГруппаСервер</name>
-    <id>1</id>
+    <id>9</id>
     <items xsi:type="form:FormGroup">
       <name>ГруппаСерверКолонки</name>
       <id>129</id>
@@ -15,7 +15,7 @@
         <id>130</id>
             <items xsi:type="form:FormField">
               <name>Порт</name>
-              <id>2</id>
+              <id>15</id>
               <title>
                 <key>ru</key>
                 <value>Порт</value>
@@ -44,7 +44,7 @@
             </items>
             <items xsi:type="form:FormField">
               <name>Адрес</name>
-              <id>3</id>
+              <id>21</id>
               <title>
                 <key>ru</key>
                 <value>Адрес</value>
@@ -59,6 +59,65 @@
               </dataPath>
               <type>InputField</type>
               <readOnly>true</readOnly>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>Логировать</name>
+              <id>137</id>
+              <title>
+                <key>ru</key>
+                <value>Логировать</value>
+              </title>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>Логировать</segments>
+              </dataPath>
+              <handlers>
+                <event>OnChange</event>
+                <name>ЛогироватьПриИзменении</name>
+              </handlers>
+              <type>CheckBoxField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>ФайлЛога</name>
+              <id>138</id>
+              <title>
+                <key>ru</key>
+                <value>Файл лога</value>
+              </title>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>ФайлЛога</segments>
+              </dataPath>
+              <handlers>
+                <event>OnChange</event>
+                <name>ФайлЛогаПриИзменении</name>
+              </handlers>
+              <type>InputField</type>
               <editMode>Enter</editMode>
               <showInHeader>true</showInHeader>
               <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -89,7 +148,7 @@
         <id>131</id>
             <items xsi:type="form:FormField">
               <name>Состояние</name>
-              <id>4</id>
+              <id>23</id>
               <title>
                 <key>ru</key>
                 <value>Состояние</value>
@@ -119,7 +178,7 @@
             </items>
             <items xsi:type="form:FormField">
               <name>Запущен</name>
-              <id>5</id>
+              <id>24</id>
               <title>
                 <key>ru</key>
                 <value>Запущен</value>
@@ -1183,7 +1242,7 @@
       <key>ru</key>
       <value>Порт</value>
     </title>
-    <id>1</id>
+    <id>10</id>
     <valueType>
       <types>String</types>
       <stringQualifiers/>
@@ -1201,7 +1260,7 @@
       <key>ru</key>
       <value>Адрес</value>
     </title>
-    <id>2</id>
+    <id>16</id>
     <valueType>
       <types>String</types>
       <stringQualifiers/>
@@ -1219,7 +1278,7 @@
       <key>ru</key>
       <value>Состояние</value>
     </title>
-    <id>3</id>
+    <id>22</id>
     <valueType>
       <types>String</types>
       <stringQualifiers/>
@@ -1249,6 +1308,41 @@
     </edit>
   </attributes>
   <attributes>
+    <name>Логировать</name>
+    <title>
+      <key>ru</key>
+      <value>Логировать</value>
+    </title>
+    <id>139</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ФайлЛога</name>
+    <title>
+      <key>ru</key>
+      <value>Файл лога</value>
+    </title>
+    <id>140</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
     <name>Инструменты</name>
     <title>
       <key>ru</key>
@@ -1266,7 +1360,7 @@
     </edit>
     <columns>
       <name>Имя</name>
-      <id>1</id>
+      <id>11</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1280,7 +1374,7 @@
     </columns>
     <columns>
       <name>Описание</name>
-      <id>2</id>
+      <id>17</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1311,7 +1405,7 @@
     </edit>
     <columns>
       <name>URI</name>
-      <id>1</id>
+      <id>12</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1325,7 +1419,7 @@
     </columns>
     <columns>
       <name>Описание</name>
-      <id>2</id>
+      <id>18</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1356,7 +1450,7 @@
     </edit>
     <columns>
       <name>Имя</name>
-      <id>1</id>
+      <id>13</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1370,7 +1464,7 @@
     </columns>
     <columns>
       <name>Описание</name>
-      <id>2</id>
+      <id>19</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1401,7 +1495,7 @@
     </edit>
     <columns>
       <name>Идентификатор</name>
-      <id>1</id>
+      <id>14</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
@@ -1415,7 +1509,7 @@
     </columns>
     <columns>
       <name>ВерсияПротокола</name>
-      <id>2</id>
+      <id>20</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
