@@ -32,6 +32,8 @@
   <commonModules>CommonModule.Мсп_ИнструментСложениеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментыКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ЛогированиеКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_МетаданныеВызовСервера</commonModules>
+  <commonModules>CommonModule.Мсп_МетаданныеСервер</commonModules>
   <commonModules>CommonModule.Мсп_ПровайдерыКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПротоколКлиент</commonModules>
   <commonModules>CommonModule.Мсп_РеестрКлиент</commonModules>
