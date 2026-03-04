@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6361f994-8ab7-4792-b98b-80205b127688">
-  <name>webTransport</name>
+  <name>мсп_webTransport</name>
   <templateType>AddIn</templateType>
 </mdclass:CommonTemplate>

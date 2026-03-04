@@ -13,9 +13,7 @@ Each task must pass through the following stages, in order:
 - If any agent proposes changes outside the current task scope: STOP and correct scope.
 
 ## Branching & Commits
-- Large tasks must be done in their own branch: `feat/<issue-i>-<short-description>`.
-- Work on an existing task can continue in the same branch (even in a new chat). Small microtasks should stay on the current branch.
-- If unsure whether a task is “large,” ask first.
+- Every task works in its own branch: `feat/<issue-i>-<short-description>`.
 - Commit at the end of the task using Conventional Commits (e.g., `feat: ...`, `fix: ...`, `chore: ...`).
 
 ## Roles
@@ -30,12 +28,3 @@ Each task must pass through the following stages, in order:
 - Implementation: changes made with file references.
 - Testing: commands run + results (or reason not run).
 - Review: reviewer findings or explicit “no findings”.
-
-## EDT Build & Checks
-- After changes, run build using `update_database` (EDT tools).
-- Check extension issues with `get_project_errors` using `projectName = ClientMcp`.
-
-## 1C App Module State
-- Application module may contain only global variables and application event handlers.
-- Global state should be stored in exported variables in the application module.
-- Access to global state must be via getter/setter methods placed in a common module (not in the application module).

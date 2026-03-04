@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c8f6df58-c6e8-4410-9bf1-0504f00161b6">
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c39129f8-1fa7-465b-b2bb-75cc55f6f820">
   <name>Конфигурация</name>
   <synonym>
     <key>ru</key>
     <value>Конфигурация</value>
   </synonym>
-  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="c79a81f5-3b6f-48c2-8954-12f2370d01e6"/>
-  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="10849620-9458-40fc-8d08-ba2cba325f68"/>
-  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="cd9ef9bc-f71e-4efa-b665-cd420f217b40"/>
-  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="29aef987-a8cb-4174-9561-0eb9b5024e9c"/>
-  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="1e815b81-4919-4ade-9878-dad2e61fe882"/>
-  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="68c64c8f-2874-4c96-a42b-82861383c79a"/>
-  <configurationExtensionCompatibilityMode>8.3.10</configurationExtensionCompatibilityMode>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="5cb8940b-4702-4cdf-8e26-bca88e152aa3"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="1b01d533-74d3-4254-8b43-d1397372c46c"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="becaf6a5-6293-4cfb-9234-614d8eab9896"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="3b3bf199-6594-419a-8a40-7d459186b4b1"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="0695b3ff-ad0b-4a86-9615-7fb1a4cba6f5"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="dd0732ea-d8a1-4fc1-a960-0c719555333e"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="3e19fc46-dd23-4308-8b1f-361f5e21e229"/>
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
   <defaultLanguage>Language.Русский</defaultLanguage>
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
   <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
-  <compatibilityMode>8.3.10</compatibilityMode>
-  <languages uuid="dfe1aa90-c712-48ab-aa78-2239d05a7412">
+  <compatibilityMode>8.5.1</compatibilityMode>
+  <languages uuid="16ed7f69-ca53-4231-9e9a-991272353de9">
     <name>Русский</name>
     <synonym>
       <key>ru</key>
