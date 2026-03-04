@@ -11,6 +11,7 @@
   <content>CommonForm.Мсп_УправлениеMCP</content>
   <content>CommonModule.Мсп_MCPКлиент</content>
   <content>CommonModule.Мсп_ИнструментИнфоИБКлиент</content>
+  <content>CommonModule.Мсп_ИнструментСложениеКлиент</content>
   <content>CommonModule.Мсп_ИнструментыКлиент</content>
   <content>CommonModule.Мсп_ЛогированиеКлиент</content>
   <content>CommonModule.Мсп_ПротоколMCPКлиент</content>
