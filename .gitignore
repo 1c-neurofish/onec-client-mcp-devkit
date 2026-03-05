@@ -15,3 +15,4 @@ Thumbs.db
 # Env files
 .env
 .env.*
+.codex/
