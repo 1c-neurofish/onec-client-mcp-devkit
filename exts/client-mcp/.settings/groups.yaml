@@ -2,8 +2,9 @@ groups:
 - children:
   - CommonModule.Мсп_ИнструментТестКлиент
   - CommonModule.Мсп_ОкнаКлиент
-  - CommonModule.Мсп_РесурсыОкнаКлиент
+  - CommonModule.Мсп_РесурсыТестКлиент
   - CommonModule.Мсп_УправлениеТестКлиентом
+  - CommonModule.Мсп_ФормыКлиент
   description: null
   name: test-client
   order: 0

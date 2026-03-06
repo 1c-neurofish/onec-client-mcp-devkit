@@ -42,7 +42,7 @@
   <commonModules>CommonModule.Мсп_ПровайдерыКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПротоколКлиент</commonModules>
   <commonModules>CommonModule.Мсп_РеестрКлиент</commonModules>
-  <commonModules>CommonModule.Мсп_РесурсыОкнаКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_РесурсыТестКлиент</commonModules>
   <commonModules>CommonModule.Мсп_СериализацияКлиент</commonModules>
   <commonModules>CommonModule.Мсп_СостояниеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ТранспортКлиент</commonModules>

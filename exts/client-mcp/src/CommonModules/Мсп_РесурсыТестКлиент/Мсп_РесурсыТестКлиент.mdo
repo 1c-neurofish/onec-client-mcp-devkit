@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0a7c4bcb-03bd-48ec-9a12-2d0e484a42ee">
-  <name>Мсп_РесурсыОкнаКлиент</name>
+  <name>Мсп_РесурсыТестКлиент</name>
   <clientManagedApplication>true</clientManagedApplication>
   <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>

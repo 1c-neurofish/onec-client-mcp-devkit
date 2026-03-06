@@ -9,5 +9,5 @@
   <content>CommonModule.Мсп_ИнструментИнфоИБКлиент</content>
   <content>CommonModule.Мсп_ИнструментСложениеКлиент</content>
   <content>CommonModule.Мсп_ИнструментТестКлиент</content>
-  <content>CommonModule.Мсп_РесурсыОкнаКлиент</content>
+  <content>CommonModule.Мсп_РесурсыТестКлиент</content>
 </mdclass:Subsystem>
