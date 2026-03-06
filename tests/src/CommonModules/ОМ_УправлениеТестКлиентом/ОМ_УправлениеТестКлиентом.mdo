@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3da790a5-0dd9-4b34-959c-d314ecd3feb0">
-  <name>ОМ_Мсп_УправлениеТестКлиентом</name>
+  <name>ОМ_УправлениеТестКлиентом</name>
   <synonym>
     <key>ru</key>
     <value>MCP управление тест клиентом</value>

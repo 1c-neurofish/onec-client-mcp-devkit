@@ -78,10 +78,10 @@
   <commonModules>CommonModule.МокитоПерехват</commonModules>
   <commonModules>CommonModule.МокитоПроверки</commonModules>
   <commonModules>CommonModule.МокитоСлужебный</commonModules>
-  <commonModules>CommonModule.ОМ_Мсп_ОкнаКлиент</commonModules>
-  <commonModules>CommonModule.ОМ_Мсп_Провайдеры</commonModules>
-  <commonModules>CommonModule.ОМ_Мсп_УправлениеТестКлиентом</commonModules>
-  <commonModules>CommonModule.ОМ_Мсп_ФормыКлиент</commonModules>
+  <commonModules>CommonModule.ОМ_ОкнаКлиент</commonModules>
+  <commonModules>CommonModule.ОМ_Провайдеры</commonModules>
+  <commonModules>CommonModule.ОМ_УправлениеТестКлиентом</commonModules>
+  <commonModules>CommonModule.ОМ_ФормыКлиент</commonModules>
   <commonModules>CommonModule.ЮТАлюр</commonModules>
   <commonModules>CommonModule.ЮТАсинхроннаяОбработкаСлужебныйКлиент</commonModules>
   <commonModules>CommonModule.ЮТВнешниеОбработкиСлужебныйСервер</commonModules>

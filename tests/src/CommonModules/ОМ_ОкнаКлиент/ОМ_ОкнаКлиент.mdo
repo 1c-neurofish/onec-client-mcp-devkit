@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0a72ba00-2749-4919-9548-2af1aaafc8f7">
-  <name>ОМ_Мсп_ФормыКлиент</name>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1f6f6553-ee1a-4aa1-8bf6-75d8f82fd009">
+  <name>ОМ_ОкнаКлиент</name>
   <synonym>
     <key>ru</key>
-    <value>MCP формы клиент</value>
+    <value>MCP окна клиент</value>
   </synonym>
   <clientManagedApplication>true</clientManagedApplication>
   <clientOrdinaryApplication>true</clientOrdinaryApplication>
