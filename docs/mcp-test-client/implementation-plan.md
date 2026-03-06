@@ -18,7 +18,7 @@
   - Остановка/отключение.
 
 ### 2. Ресурс чтения активных окон
-- Статус: `todo`
+- Статус: `in_progress`
 - Рабочий план: `docs/mcp-test-client/tasks/02-active-windows-resource.md`
 - Содержание:
   - Ресурс `ui://active/window`.

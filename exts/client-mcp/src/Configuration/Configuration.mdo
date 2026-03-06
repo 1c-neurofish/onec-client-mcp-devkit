@@ -36,6 +36,7 @@
   <commonModules>CommonModule.Мсп_ЛогированиеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_МетаданныеВызовСервера</commonModules>
   <commonModules>CommonModule.Мсп_МетаданныеСервер</commonModules>
+  <commonModules>CommonModule.Мсп_ОкнаКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПаузаВызовСервера</commonModules>
   <commonModules>CommonModule.Мсп_ПровайдерыКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПротоколКлиент</commonModules>
@@ -44,6 +45,7 @@
   <commonModules>CommonModule.Мсп_СостояниеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ТранспортКлиент</commonModules>
   <commonModules>CommonModule.Мсп_УправлениеТестКлиентом</commonModules>
+  <commonModules>CommonModule.Мсп_ФормыКлиент</commonModules>
   <commonCommands>CommonCommand.Мсп_УправлениеMCP</commonCommands>
   <commonForms>CommonForm.Мсп_УправлениеMCP</commonForms>
 </mdclass:Configuration>
