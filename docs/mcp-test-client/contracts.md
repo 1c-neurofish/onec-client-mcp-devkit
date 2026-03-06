@@ -3,17 +3,18 @@
 ## MCP методы
 - `initialize` / `initialized`.
 - `tools/list`, `tools/call`.
-- `resources/list`, `resources/read`.
+- `resources/list`, `resources/templates/list`, `resources/read`.
 - `prompts/list`, `prompts/get`.
 - Уведомления `notifications/tools/listChanged`, `notifications/resources/listChanged`, `notifications/prompts/listChanged`.
 - Уведомления о смене UI‑состояния (см. ниже).
 
 ## Ресурсы (URI)
-- `ui://active/window` — активное окно.
-- `ui://windows` — список окон.
-- `ui://active/form` — активная форма.
-- `ui://forms/{formId}` — конкретная форма.
-- `ui://elements/{elementId}` — элемент управления.
+- `window://active` — активное окно.
+- `window://{path}` — конкретное окно по навигационной ссылке.
+- `form://{name}` — форма по имени формы.
+- `control://{form}/{name}` — элемент формы по имени формы и имени элемента.
+- Resource templates публикуются через `resources/templates/list`.
+- Поддерживаемый subset RFC 6570 ограничен выражениями `{var}`.
 
 ## Формат ресурса
 - `contents` массив.
@@ -39,13 +40,13 @@
 3. Сервер обновляет состояние и отправляет ответ.
 
 ### 2. Чтение дерева элементов
-1. Вызов `resources/read` -> `ui://active/form`.
+1. Вызов `resources/read` -> `window://active` или `form://{name}`.
 2. Сервер строит снимок UI.
 3. Сервер возвращает ресурс.
 
 ### 3. Пользовательское действие
-1. Вызов `tools/call` -> `test_client_click`/`test_client_input`.
-2. Сервер проверяет, требуется ли подтверждение.
+1. Вызов `tools/call` -> `find` / `activate` / `close` / `open_form`.
+2. Сервер разрешает URI или выполняет поиск в иерархии тест‑клиента.
 3. Сервер выполняет действие и возвращает результат.
 
 ## Ошибки
@@ -53,8 +54,8 @@
 - Ошибки домена: `UI_NOT_FOUND`, `UI_NOT_READY`, `ACTION_DENIED`.
 
 ## Заглушки
-- Точная схема `formId`/`elementId`.
 - Правила построения `path`.
+- Расширенные операторы и модификаторы RFC 6570 (`{+x}`, `{?x}`, `{x*}`, `{x:3}`).
 - Поведение при множественных совпадениях элементов.
 
 ## Ссылки

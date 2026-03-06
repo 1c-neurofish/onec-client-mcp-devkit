@@ -1,0 +1,10 @@
+groups:
+- children:
+  - CommonModule.Мсп_ИнструментТестКлиент
+  - CommonModule.Мсп_ОкнаКлиент
+  - CommonModule.Мсп_РесурсыОкнаКлиент
+  - CommonModule.Мсп_УправлениеТестКлиентом
+  description: null
+  name: test-client
+  order: 0
+  path: CommonModule
