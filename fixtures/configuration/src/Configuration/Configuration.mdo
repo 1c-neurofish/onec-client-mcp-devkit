@@ -28,7 +28,6 @@
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
-  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
   <compatibilityMode>8.5.1</compatibilityMode>
   <languages uuid="16ed7f69-ca53-4231-9e9a-991272353de9">
     <name>Русский</name>
@@ -38,4 +37,5 @@
     </synonym>
     <languageCode>ru</languageCode>
   </languages>
+  <dataProcessors>DataProcessor.ТестированиеВвода</dataProcessors>
 </mdclass:Configuration>

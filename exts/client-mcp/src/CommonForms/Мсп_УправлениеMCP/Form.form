@@ -1101,6 +1101,25 @@
       <placementArea>UserCmds</placementArea>
       <representationInContextMenu>Auto</representationInContextMenu>
     </items>
+    <items xsi:type="form:Button">
+      <name>ФормаПоказатьДиалог</name>
+      <id>202</id>
+      <title>
+        <key>ru</key>
+        <value>Диалог</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <commandName>Form.Command.ПоказатьДиалог</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
     <horizontalAlign>Left</horizontalAlign>
     <autoFill>true</autoFill>
   </autoCommandBar>
@@ -1486,6 +1505,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>Обновить</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ПоказатьДиалог</name>
+    <title>
+      <key>ru</key>
+      <value>Диалог</value>
+    </title>
+    <id>203</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ПоказатьДиалог</name>
       </handler>
     </action>
     <currentRowUse>DontUse</currentRowUse>
