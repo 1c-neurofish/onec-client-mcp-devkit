@@ -13,8 +13,11 @@
 - `window://{path}` — конкретное окно по навигационной ссылке.
 - `form://{name}` — форма по имени формы.
 - `control://{form}/{name}` — элемент формы по имени формы и имени элемента.
+- `form://{name}` возвращает JSON-снимок формы с полями `type`, `uri`, `title`, `name`, `children`.
+- `control://{form}/{name}` формируется только для элементов формы с заполненным `name`.
 - Resource templates публикуются через `resources/templates/list`.
 - Поддерживаемый subset RFC 6570 ограничен выражениями `{var}`.
+- URI `ui://active/form` и `ui://forms/{formId}` больше не публикуются.
 
 ## Формат ресурса
 - `contents` массив.
@@ -24,6 +27,7 @@
 - `type` — `window|form|group|button|field|table|decoration`.
 - `name` — внутреннее имя элемента.
 - `title` — заголовок.
+- `uri` — URI формы/окна или именованного элемента формы.
 - `visible|enabled|readOnly` — доступность.
 - `children` — массив вложенных элементов (ограничение по `depth`).
 - `path` — путь до элемента (опционально).
@@ -51,7 +55,7 @@
 
 ## Ошибки
 - Ошибки MCP: `-32602` для неверных параметров, `-32603` для ошибки выполнения.
-- Ошибки домена: `UI_NOT_FOUND`, `UI_NOT_READY`, `ACTION_DENIED`.
+- Ошибки домена: `UI_NOT_FOUND`, `UI_NOT_READY`, `UI_AMBIGUOUS_OBJECT`, `ACTION_DENIED`.
 
 ## Заглушки
 - Правила построения `path`.

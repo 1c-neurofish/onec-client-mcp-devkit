@@ -35,7 +35,7 @@
   - `close` для окна и формы, `activate` для окна, формы и control.
 
 ### 4. Чтение формы и URI элементов
-- Статус: `todo`
+- Статус: `done`
 - Рабочий план: `docs/mcp-test-client/tasks/04-form-structure.md`
 - Содержание:
   - Ресурс-шаблон `form://{name}`.

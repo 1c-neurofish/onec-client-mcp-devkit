@@ -113,10 +113,11 @@
 ## Resources
 - `window://active` — активное окно.
 - `window://{path}` — конкретное окно по навигационной ссылке.
-- `form://{name}` — форма по имени формы.
-- `control://{form}/{name}` — элемент формы по имени формы и имени элемента.
+- `form://{name}` — форма по имени формы; `resources/read` возвращает JSON-снимок формы с полями `type`, `uri`, `title`, `name`, `children`.
+- `control://{form}/{name}` — элемент формы по имени формы и имени элемента; URI формируется только для именованных элементов.
 - Шаблоны ресурсов публикуются через `resources/templates/list`.
 - Поддерживаемый subset RFC 6570 ограничен выражениями `{var}`.
+- `ui://active/form` и `ui://forms/{formId}` не публикуются.
 
 ## Уведомления
 - `notifications/ui/changed` — изменения UI.
