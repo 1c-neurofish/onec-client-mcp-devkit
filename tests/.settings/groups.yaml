@@ -1,0 +1,9 @@
+groups:
+- children:
+  - CommonModule.ОМ_ОкнаКлиент
+  - CommonModule.ОМ_УправлениеТестКлиентом
+  - CommonModule.ОМ_ФормыКлиент
+  description: null
+  name: test-client
+  order: 0
+  path: CommonModule

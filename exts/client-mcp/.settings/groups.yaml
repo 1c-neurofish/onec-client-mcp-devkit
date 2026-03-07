@@ -1,5 +1,6 @@
 groups:
 - children:
+  - CommonModule.Мсп_URIКлиент
   - CommonModule.Мсп_ИнструментТестКлиент
   - CommonModule.Мсп_ОкнаКлиент
   - CommonModule.Мсп_РесурсыТестКлиент
