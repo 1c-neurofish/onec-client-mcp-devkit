@@ -18,7 +18,7 @@
   - Остановка/отключение.
 
 ### 2. Ресурсы окон (`window://`)
-- Статус: `in_progress`
+- Статус: `done`
 - Рабочий план: `docs/mcp-test-client/tasks/02-active-windows-resource.md`
 - Содержание:
   - Ресурс `window://active`.
@@ -43,7 +43,7 @@
   - Правила формирования `uri`, `title`, `name` и ошибок разрешения.
 
 ### 5. Работа с формой (переход, действия, эмуляция пользователя)
-- Статус: `todo`
+- Статус: `done`
 - Рабочий план: `docs/mcp-test-client/tasks/05-form-interactions.md`
 - Содержание:
   - Инструменты `click`, `input`, `select` для `window://`, `form://`, `control://`.
