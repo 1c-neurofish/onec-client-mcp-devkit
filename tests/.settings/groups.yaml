@@ -9,8 +9,15 @@ groups:
   order: 0
   path: CommonModule
 - children:
+  - CommonModule.ОМ_ИнструментыКлиент
+  - CommonModule.ОМ_Коллекции
   - CommonModule.ОМ_ЛогированиеКлиент
   - CommonModule.ОМ_Провайдеры
+  - CommonModule.ОМ_ПротоколКлиент
+  - CommonModule.ОМ_РеестрКлиент
+  - CommonModule.ОМ_РесурсыКлиент
+  - CommonModule.ОМ_СериализацияКлиент
+  - CommonModule.ОМ_СостояниеКлиент
   description: null
   name: mcp-api
   order: 1
