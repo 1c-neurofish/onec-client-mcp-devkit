@@ -1,9 +1,17 @@
 groups:
 - children:
+  - CommonModule.ОМ_URIКлиент
   - CommonModule.ОМ_ОкнаКлиент
   - CommonModule.ОМ_УправлениеТестКлиентом
   - CommonModule.ОМ_ФормыКлиент
   description: null
   name: test-client
   order: 0
+  path: CommonModule
+- children:
+  - CommonModule.ОМ_ЛогированиеКлиент
+  - CommonModule.ОМ_Провайдеры
+  description: null
+  name: mcp-api
+  order: 1
   path: CommonModule

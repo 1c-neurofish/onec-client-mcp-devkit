@@ -20,4 +20,28 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
+  <forms uuid="a1b2c3d4-0001-0001-0001-000000000001">
+    <name>УправляемыеЭлементы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Управляемые элементы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+  </forms>
+  <forms uuid="a1b2c3d4-0002-0002-0002-000000000002">
+    <name>ТаблицаЗначений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица значений</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+  </forms>
+  <forms uuid="a1b2c3d4-0003-0003-0003-000000000003">
+    <name>ГруппыИВкладки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группы и вкладки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+  </forms>
 </mdclass:DataProcessor>
