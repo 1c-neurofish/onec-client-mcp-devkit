@@ -124,130 +124,150 @@
           <textEdit>true</textEdit>
         </extInfo>
       </items>
-      <items xsi:type="form:FormField">
-        <name>Логировать</name>
-        <id>129</id>
+      <items xsi:type="form:FormGroup">
+        <name>ГруппаЛогирование</name>
+        <id>210</id>
+        <items xsi:type="form:FormField">
+          <name>Логировать</name>
+          <id>129</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Логировать</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>ЛогироватьПриИзменении</name>
+          </handlers>
+          <extendedTooltip>
+            <name>ЛогироватьРасширеннаяПодсказка</name>
+            <id>29</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ЛогироватьКонтекстноеМеню</name>
+            <id>130</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>CheckBoxField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>УровеньЛога</name>
+          <id>160</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>УровеньЛога</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>УровеньЛогаПриИзменении</name>
+          </handlers>
+          <extendedTooltip>
+            <name>УровеньЛогаРасширеннаяПодсказка</name>
+            <id>161</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>УровеньЛогаКонтекстноеМеню</name>
+            <id>162</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <listChoiceMode>true</listChoiceMode>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>ФайлЛога</name>
+          <id>28</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>ФайлЛога</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>ФайлЛогаПриИзменении</name>
+          </handlers>
+          <extendedTooltip>
+            <name>ФайлЛогаРасширеннаяПодсказка</name>
+            <id>26</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ФайлЛогаКонтекстноеМеню</name>
+            <id>27</id>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
           <common>true</common>
         </userVisible>
-        <dataPath xsi:type="form:DataPath">
-          <segments>Логировать</segments>
-        </dataPath>
-        <handlers>
-          <event>OnChange</event>
-          <name>ЛогироватьПриИзменении</name>
-        </handlers>
-        <extendedTooltip>
-          <name>ЛогироватьРасширеннаяПодсказка</name>
-          <id>29</id>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </extendedTooltip>
-        <contextMenu>
-          <name>ЛогироватьКонтекстноеМеню</name>
-          <id>130</id>
-          <autoFill>true</autoFill>
-        </contextMenu>
-        <type>CheckBoxField</type>
-        <editMode>Enter</editMode>
-        <showInHeader>true</showInHeader>
-        <headerHorizontalAlign>Left</headerHorizontalAlign>
-        <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
-      </items>
-      <items xsi:type="form:FormField">
-        <name>УровеньЛога</name>
-        <id>160</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <dataPath xsi:type="form:DataPath">
-          <segments>УровеньЛога</segments>
-        </dataPath>
-        <handlers>
-          <event>OnChange</event>
-          <name>УровеньЛогаПриИзменении</name>
-        </handlers>
-        <extendedTooltip>
-          <name>УровеньЛогаРасширеннаяПодсказка</name>
-          <id>161</id>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </extendedTooltip>
-        <contextMenu>
-          <name>УровеньЛогаКонтекстноеМеню</name>
-          <id>162</id>
-          <autoFill>true</autoFill>
-        </contextMenu>
-        <type>InputField</type>
-        <editMode>Enter</editMode>
-        <showInHeader>true</showInHeader>
-        <headerHorizontalAlign>Left</headerHorizontalAlign>
-        <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:InputFieldExtInfo">
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <wrap>true</wrap>
-          <listChoiceMode>true</listChoiceMode>
-          <chooseType>true</chooseType>
-          <typeDomainEnabled>true</typeDomainEnabled>
-          <textEdit>true</textEdit>
-        </extInfo>
-      </items>
-      <items xsi:type="form:FormField">
-        <name>ФайлЛога</name>
-        <id>28</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <dataPath xsi:type="form:DataPath">
-          <segments>ФайлЛога</segments>
-        </dataPath>
-        <handlers>
-          <event>OnChange</event>
-          <name>ФайлЛогаПриИзменении</name>
-        </handlers>
-        <extendedTooltip>
-          <name>ФайлЛогаРасширеннаяПодсказка</name>
-          <id>26</id>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </extendedTooltip>
-        <contextMenu>
-          <name>ФайлЛогаКонтекстноеМеню</name>
-          <id>27</id>
-          <autoFill>true</autoFill>
-        </contextMenu>
-        <type>InputField</type>
-        <editMode>Enter</editMode>
-        <showInHeader>true</showInHeader>
-        <headerHorizontalAlign>Left</headerHorizontalAlign>
-        <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:InputFieldExtInfo">
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <wrap>true</wrap>
-          <chooseType>true</chooseType>
-          <typeDomainEnabled>true</typeDomainEnabled>
-          <textEdit>true</textEdit>
+        <title>
+          <key>ru</key>
+          <value>Логирование</value>
+        </title>
+        <type>UsualGroup</type>
+        <extInfo xsi:type="form:UsualGroupExtInfo">
+          <group>Vertical</group>
+          <representation>NormalSeparation</representation>
+          <throughAlign>Auto</throughAlign>
+          <currentRowUse>Auto</currentRowUse>
         </extInfo>
       </items>
       <visible>true</visible>
@@ -296,29 +316,6 @@
           <typeDomainEnabled>true</typeDomainEnabled>
           <textEdit>true</textEdit>
         </extInfo>
-      </items>
-      <items xsi:type="form:FormField">
-        <name>Запущен</name>
-        <id>24</id>
-        <title>
-          <key>ru</key>
-          <value>Запущен</value>
-        </title>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <dataPath xsi:type="form:DataPath">
-          <segments>Запущен</segments>
-        </dataPath>
-        <type>CheckBoxField</type>
-        <readOnly>true</readOnly>
-        <editMode>Enter</editMode>
-        <showInHeader>true</showInHeader>
-        <headerHorizontalAlign>Left</headerHorizontalAlign>
-        <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
       </items>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -396,7 +393,8 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -436,7 +434,8 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -541,12 +540,10 @@
           <id>55</id>
           <autoFill>true</autoFill>
         </contextMenu>
-        <changeRowSet>true</changeRowSet>
-        <changeRowOrder>true</changeRowOrder>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <autoMaxRowsCount>true</autoMaxRowsCount>
-        <selectionMode>MultiRow</selectionMode>
+        <selectionMode>SingleRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
         <footerHeight>1</footerHeight>
@@ -554,14 +551,10 @@
         <verticalScrollBar>AutoUse</verticalScrollBar>
         <horizontalLines>true</horizontalLines>
         <verticalLines>true</verticalLines>
-        <autoInsertNewRow>true</autoInsertNewRow>
         <searchOnInput>Auto</searchOnInput>
         <initialListView>Auto</initialListView>
         <horizontalStretch>true</horizontalStretch>
         <verticalStretch>true</verticalStretch>
-        <enableStartDrag>true</enableStartDrag>
-        <enableDrag>true</enableDrag>
-        <fileDragMode>AsFileRef</fileDragMode>
         <rowFilter xsi:type="core:UndefinedValue"/>
       </items>
       <visible>true</visible>
@@ -621,7 +614,8 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -661,7 +655,8 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -766,12 +761,10 @@
           <id>74</id>
           <autoFill>true</autoFill>
         </contextMenu>
-        <changeRowSet>true</changeRowSet>
-        <changeRowOrder>true</changeRowOrder>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <autoMaxRowsCount>true</autoMaxRowsCount>
-        <selectionMode>MultiRow</selectionMode>
+        <selectionMode>SingleRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
         <footerHeight>1</footerHeight>
@@ -779,14 +772,10 @@
         <verticalScrollBar>AutoUse</verticalScrollBar>
         <horizontalLines>true</horizontalLines>
         <verticalLines>true</verticalLines>
-        <autoInsertNewRow>true</autoInsertNewRow>
         <searchOnInput>Auto</searchOnInput>
         <initialListView>Auto</initialListView>
         <horizontalStretch>true</horizontalStretch>
         <verticalStretch>true</verticalStretch>
-        <enableStartDrag>true</enableStartDrag>
-        <enableDrag>true</enableDrag>
-        <fileDragMode>AsFileRef</fileDragMode>
         <rowFilter xsi:type="core:UndefinedValue"/>
       </items>
       <visible>true</visible>
@@ -846,7 +835,8 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -886,7 +876,8 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -991,12 +982,10 @@
           <id>93</id>
           <autoFill>true</autoFill>
         </contextMenu>
-        <changeRowSet>true</changeRowSet>
-        <changeRowOrder>true</changeRowOrder>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <autoMaxRowsCount>true</autoMaxRowsCount>
-        <selectionMode>MultiRow</selectionMode>
+        <selectionMode>SingleRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
         <footerHeight>1</footerHeight>
@@ -1004,14 +993,10 @@
         <verticalScrollBar>AutoUse</verticalScrollBar>
         <horizontalLines>true</horizontalLines>
         <verticalLines>true</verticalLines>
-        <autoInsertNewRow>true</autoInsertNewRow>
         <searchOnInput>Auto</searchOnInput>
         <initialListView>Auto</initialListView>
         <horizontalStretch>true</horizontalStretch>
         <verticalStretch>true</verticalStretch>
-        <enableStartDrag>true</enableStartDrag>
-        <enableDrag>true</enableDrag>
-        <fileDragMode>AsFileRef</fileDragMode>
         <rowFilter xsi:type="core:UndefinedValue"/>
       </items>
       <visible>true</visible>
@@ -1095,25 +1080,6 @@
         <common>true</common>
       </userVisible>
       <commandName>Form.Command.Обновить</commandName>
-      <representation>Auto</representation>
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <placementArea>UserCmds</placementArea>
-      <representationInContextMenu>Auto</representationInContextMenu>
-    </items>
-    <items xsi:type="form:Button">
-      <name>ФормаПоказатьДиалог</name>
-      <id>202</id>
-      <title>
-        <key>ru</key>
-        <value>Диалог</value>
-      </title>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <commandName>Form.Command.ПоказатьДиалог</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -1509,23 +1475,7 @@
     </action>
     <currentRowUse>DontUse</currentRowUse>
   </formCommands>
-  <formCommands>
-    <name>ПоказатьДиалог</name>
-    <title>
-      <key>ru</key>
-      <value>Диалог</value>
-    </title>
-    <id>203</id>
-    <use>
-      <common>true</common>
-    </use>
-    <action xsi:type="form:FormCommandHandlerContainer">
-      <handler>
-        <name>ПоказатьДиалог</name>
-      </handler>
-    </action>
-    <currentRowUse>DontUse</currentRowUse>
-  </formCommands>
+
   <commandInterface>
     <navigationPanel/>
     <commandBar/>
