@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6e002688-e466-4dee-9bcb-a3f7b77c7cc0">
+  <name>ОМ_ТестированиеВводаФормы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тестирование ввода формы</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>
