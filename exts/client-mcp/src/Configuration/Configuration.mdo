@@ -50,6 +50,9 @@
   <commonModules>CommonModule.Мсп_СостояниеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_СхемаПараметров</commonModules>
   <commonModules>CommonModule.Мсп_ТранспортКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ТранспортРеестрыКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ТранспортСерверКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ТранспортСобытияКлиент</commonModules>
   <commonModules>CommonModule.Мсп_УправлениеТестКлиентом</commonModules>
   <commonModules>CommonModule.Мсп_ФормыКлиент</commonModules>
   <commonCommands>CommonCommand.Мсп_УправлениеMCP</commonCommands>

@@ -18,5 +18,8 @@
   <content>CommonModule.Мсп_СериализацияКлиент</content>
   <content>CommonModule.Мсп_СостояниеКлиент</content>
   <content>CommonModule.Мсп_ТранспортКлиент</content>
+  <content>CommonModule.Мсп_ТранспортРеестрыКлиент</content>
+  <content>CommonModule.Мсп_ТранспортСерверКлиент</content>
+  <content>CommonModule.Мсп_ТранспортСобытияКлиент</content>
   <content>CommonTemplate.Мсп_webTransport</content>
 </mdclass:Subsystem>

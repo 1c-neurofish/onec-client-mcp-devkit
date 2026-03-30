@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="358c8fa2-d8fb-47ca-989a-4d4ab9f80286">
+  <name>Мсп_ТранспортСобытияКлиент</name>
+  <synonym>
+    <key>ru</key>
+    <value>Транспорт событий клиента</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>
