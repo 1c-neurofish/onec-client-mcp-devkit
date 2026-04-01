@@ -1,6 +1,6 @@
 ---
 name: launch-1c-apps
-description: Launch 1C applications in the local development environment. Use when the user asks to open a thin client, thick client, or configurator/designer, or when colloquial names must be mapped to `mcp__v8_runner__launch_app` utility aliases.
+description: Launch 1C applications in the local development environment. Use when the user asks to open a thin client, thick client, or configurator/designer, or when colloquial names must be mapped to `v8-test-runner` launch aliases.
 ---
 
 # Launch 1C Apps
@@ -9,7 +9,7 @@ description: Launch 1C applications in the local development environment. Use wh
 
 1. Read `references/aliases.md`.
 2. Normalize the user request to one of: `thin-client`, `thick-client`, `designer`.
-3. Launch with `mcp__v8_runner__launch_app` using a supported alias from that row.
+3. Launch through the `v8-test-runner` app-launch workflow using a supported alias from that row.
 4. Report which alias succeeded.
 5. If all supported aliases fail, return the exact tool error.
 
