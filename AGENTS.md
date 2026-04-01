@@ -16,6 +16,12 @@ Each task must pass through the following stages, in order:
 - When editing BSL modules, follow `docs/code-style.md`.
 - Для методов не добавляем префикс (например MCP).
 
+## API Contracts
+- Минимизировать нормализации и лишние преобразования данных.
+- Нормализация считается явным сигналом сломанного контракта.
+- Для публичного API не добавлять скрытые адаптеры или автонормализацию без явного подтверждения пользователя.
+- Для служебного или внутреннего API не нормализовывать вход "на всякий случай"; если контракт неудобен или неверен, менять сам контракт и его callers.
+
 ## Branching & Commits
 - Large tasks must be done in their own branch: `feat/<issue-i>-<short-description>`.
 - Work on an existing task can continue in the same branch (even in a new chat). Small microtasks should stay on the current branch.
