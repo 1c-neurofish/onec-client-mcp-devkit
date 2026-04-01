@@ -39,6 +39,7 @@
   </languages>
   <dataProcessors>DataProcessor.ВнешнийИнструментАсинхроннаяОперация</dataProcessors>
   <dataProcessors>DataProcessor.ВнешнийИнструментКалькулятор</dataProcessors>
+  <dataProcessors>DataProcessor.ДемоMCPКомпоненты</dataProcessors>
   <dataProcessors>DataProcessor.МодальныеДиалоги</dataProcessors>
   <dataProcessors>DataProcessor.ТестированиеВвода</dataProcessors>
 </mdclass:Configuration>
