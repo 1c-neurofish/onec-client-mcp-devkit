@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d1b0c80f-8750-455b-8d16-030edc7fc49b">
+  <name>ТестПровайдерV2ПриоритетМсп</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тестовый провайдер V2 приоритет</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>
