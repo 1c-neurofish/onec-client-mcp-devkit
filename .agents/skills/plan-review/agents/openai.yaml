@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Review"
+  short_description: "Subagent plan approval loop"
+  default_prompt: "Use $plan-review to iterate on an implementation plan with reviewer/fixer subagents until it is explicitly approved."
