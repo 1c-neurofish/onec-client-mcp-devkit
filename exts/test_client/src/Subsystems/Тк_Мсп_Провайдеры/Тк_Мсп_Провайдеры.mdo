@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5413628d-3656-4ed3-97b5-2e09e4e1fad7">
+  <name>Тк_Мсп_Провайдеры</name>
+  <includeHelpInContents>true</includeHelpInContents>
+  <content>CommonModule.Мсп_ИнструментТестКлиент</content>
+  <content>CommonModule.Мсп_РесурсыТестКлиент</content>
+</mdclass:Subsystem>

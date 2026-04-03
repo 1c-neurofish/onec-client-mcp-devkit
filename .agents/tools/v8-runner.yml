@@ -10,6 +10,10 @@ app:
       name: client_mcp
       type: EXTENSION
       purpose: [MAIN]
+    - path: exts/test_client
+      name: test_client
+      type: EXTENSION
+      purpose: [MAIN]
     - path: tests/src
       name: tests
       type: EXTENSION

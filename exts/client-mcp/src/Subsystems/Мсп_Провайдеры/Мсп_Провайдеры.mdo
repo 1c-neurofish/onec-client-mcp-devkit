@@ -7,6 +7,4 @@
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <content>CommonModule.Мсп_ИнструментИнфоИБКлиент</content>
-  <content>CommonModule.Мсп_ИнструментТестКлиент</content>
-  <content>CommonModule.Мсп_РесурсыТестКлиент</content>
 </mdclass:Subsystem>

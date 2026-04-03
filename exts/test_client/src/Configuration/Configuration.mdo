@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="11ceab33-dcea-40ec-9691-c33d5924a0e2">
+  <name>test_client</name>
+  <synonym>
+    <key>ru</key>
+    <value>Test client</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <defaultRunMode>Checked</defaultRunMode>
+    <usePurposes>Checked</usePurposes>
+    <managedApplicationModule>Extended</managedApplicationModule>
+    <sessionModule>Extended</sessionModule>
+    <externalConnectionModule>Extended</externalConnectionModule>
+    <commandInterface>Extended</commandInterface>
+    <mainSectionCommandInterface>Extended</mainSectionCommandInterface>
+    <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
+    <compatibilityMode>Checked</compatibilityMode>
+    <defaultStyle>Extended</defaultStyle>
+    <defaultRoles>Extended</defaultRoles>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="b7d2671e-a626-4001-aecd-6e0d5ff5081b"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="c99a921a-9b76-4dce-89b0-17daa380c70c"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="6968c4ec-3131-4640-954b-d9202aa97de9"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="a8648295-4c4d-4cca-8c0a-43f4ad645f0c"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="ab50f761-7576-4984-9d30-fdd511473dae"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="5aed3592-4c2a-4cfa-be4d-8d694969c4f2"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="43515748-aa3c-4ece-94dc-6b5771f04c7a"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>тк_</namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.18</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>Customization</configurationExtensionPurpose>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <defaultRoles>Role.тк_ОсновнаяРоль</defaultRoles>
+  <compatibilityMode>8.3.27</compatibilityMode>
+  <subsystems>Subsystem.Тк_Мсп_Провайдеры</subsystems>
+  <roles>Role.тк_ОсновнаяРоль</roles>
+  <commonModules>CommonModule.Мсп_URIКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ИнструментТестКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ОкнаКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ПаузаТестКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_РесурсыТестКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_УправлениеТестКлиентом</commonModules>
+  <commonModules>CommonModule.Мсп_ФормыКлиент</commonModules>
+</mdclass:Configuration>
