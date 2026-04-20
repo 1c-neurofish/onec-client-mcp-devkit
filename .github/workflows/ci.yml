@@ -31,7 +31,7 @@ permissions:
   id-token: write
 
 env:
-  V8_VERSION: 8.3.27.1859
+  V8_VERSION: 8.3.20.1549
   EDT_VERSION: 2025.2.3
   LANG: ru_RU.UTF-8
 
