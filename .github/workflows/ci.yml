@@ -177,35 +177,35 @@ jobs:
           7z x ../export.7z -y
 
       - name: Create infobase
-        run: ibcmd infobase create --db-path=file-db --import=export\configuration --apply --force
+        run: ibcmd infobase --db-path=file-db create --import=export\configuration --apply --force
         timeout-minutes: 5
 
       - name: Import client_mcp extension
-        run: ibcmd infobase config import --db-path=file-db --extension=client_mcp export\client_mcp
+        run: ibcmd infobase --db-path=file-db config import --extension=client_mcp export\client_mcp
         timeout-minutes: 5
 
       - name: Import test_client extension
-        run: ibcmd infobase config import --db-path=file-db --extension=test_client export\test_client
+        run: ibcmd infobase --db-path=file-db config import --extension=test_client export\test_client
         timeout-minutes: 5
 
       - name: Import tests extension
-        run: ibcmd infobase config import --db-path=file-db --extension=tests export\tests
+        run: ibcmd infobase --db-path=file-db config import --extension=tests export\tests
         timeout-minutes: 5
 
       - name: Save client_mcp extension
-        run: ibcmd infobase config save --db-path=file-db --extension=client_mcp binary\client_mcp.cfe
+        run: ibcmd infobase --db-path=file-db config save --extension=client_mcp binary\client_mcp.cfe
         timeout-minutes: 5
 
       - name: Save test_client extension
-        run: ibcmd infobase config save --db-path=file-db --extension=test_client binary\test_client.cfe
+        run: ibcmd infobase --db-path=file-db config save --extension=test_client binary\test_client.cfe
         timeout-minutes: 5
 
       - name: Save tests extension
-        run: ibcmd infobase config save --db-path=file-db --extension=tests binary\tests.cfe
+        run: ibcmd infobase --db-path=file-db config save --extension=tests binary\tests.cfe
         timeout-minutes: 5
 
       - name: Save configuration
-        run: ibcmd infobase config save --db-path=file-db binary\configuration.cf
+        run: ibcmd infobase --db-path=file-db config save binary\configuration.cf
         timeout-minutes: 5
 
       - name: Upload build artifacts
@@ -263,26 +263,26 @@ jobs:
           path: binary
 
       - name: Create infobase
-        run: ibcmd infobase create --db-path=file-db --load=binary/configuration.cf --apply --force
+        run: ibcmd infobase --db-path=file-db create --load=binary/configuration.cf --apply --force
         timeout-minutes: 5
 
       - name: Load client_mcp extension
-        uses: 1CDevFlow/workflows/actions/load-extension@48b8f67b1c12add92f2c15a660d4d1011cd279c5
-        with:
-          name: client_mcp
-          path: binary/client_mcp.cfe
+        run: |
+          ibcmd infobase --db-path=file-db config load --extension=client_mcp --force binary/client_mcp.cfe
+          ibcmd infobase --db-path=file-db config apply --extension=client_mcp --force
+          ibcmd infobase --db-path=file-db config extension update --name=client_mcp --safe-mode=no --unsafe-action-protection=no
 
       - name: Load test_client extension
-        uses: 1CDevFlow/workflows/actions/load-extension@48b8f67b1c12add92f2c15a660d4d1011cd279c5
-        with:
-          name: test_client
-          path: binary/test_client.cfe
+        run: |
+          ibcmd infobase --db-path=file-db config load --extension=test_client --force binary/test_client.cfe
+          ibcmd infobase --db-path=file-db config apply --extension=test_client --force
+          ibcmd infobase --db-path=file-db config extension update --name=test_client --safe-mode=no --unsafe-action-protection=no
 
       - name: Load tests extension
-        uses: 1CDevFlow/workflows/actions/load-extension@48b8f67b1c12add92f2c15a660d4d1011cd279c5
-        with:
-          name: tests
-          path: binary/tests.cfe
+        run: |
+          ibcmd infobase --db-path=file-db config load --extension=tests --force binary/tests.cfe
+          ibcmd infobase --db-path=file-db config apply --extension=tests --force
+          ibcmd infobase --db-path=file-db config extension update --name=tests --safe-mode=no --unsafe-action-protection=no
 
       - name: Create YaXUnit config
         run: |

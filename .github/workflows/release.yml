@@ -116,9 +116,9 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p dist
-          ibcmd infobase create --db-path=file-db --import=export/configuration --apply --force
-          ibcmd infobase config import --db-path=file-db --extension=client_mcp export/client_mcp
-          ibcmd infobase config save --db-path=file-db --extension=client_mcp dist/client_mcp.cfe
+          ibcmd infobase --db-path=file-db create --import=export/configuration --apply --force
+          ibcmd infobase --db-path=file-db config import --extension=client_mcp export/client_mcp
+          ibcmd infobase --db-path=file-db config save --extension=client_mcp dist/client_mcp.cfe
         timeout-minutes: 15
 
       - name: Upload client_mcp.cfe artifact
