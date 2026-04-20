@@ -61,7 +61,7 @@ jobs:
         with:
           type: edt
           edt_version: ${{ env.EDT_VERSION }}
-          cache: true
+          cache: false
         env:
           ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
           ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
