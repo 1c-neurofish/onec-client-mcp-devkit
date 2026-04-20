@@ -75,6 +75,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/edt-cli"
           ln -sf "$edt_cli" "$RUNNER_TEMP/edt-cli/1cedtcli.sh"
           echo "$RUNNER_TEMP/edt-cli" >> "$GITHUB_PATH"
+          echo "EDT_CLI=$edt_cli" >> "$GITHUB_ENV"
 
       - name: Prepare export directories
         run: mkdir -p export/configuration export/client_mcp export/test_client export/tests
@@ -82,8 +83,9 @@ jobs:
       - name: Export EDT sources
         run: |
           set -euo pipefail
-          edt_cli="$(command -v 1cedtcli.sh)"
+          edt_cli="$EDT_CLI"
           workspace="$RUNNER_TEMP/ws"
+          echo "Using EDT CLI: $edt_cli"
 
           "$edt_cli" -data "$workspace" -timeout 900 -command export --configuration-files "$PWD/export/configuration" --project "$PWD/fixtures/configuration"
           "$edt_cli" -data "$workspace" -timeout 900 -command export --configuration-files "$PWD/export/client_mcp" --project "$PWD/exts/client-mcp"
