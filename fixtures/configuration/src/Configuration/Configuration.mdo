@@ -28,7 +28,8 @@
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
-  <compatibilityMode>8.3.27</compatibilityMode>
+  <configurationExtensionCompatibilityMode>8.3.20</configurationExtensionCompatibilityMode>
+  <compatibilityMode>8.3.20</compatibilityMode>
   <languages uuid="16ed7f69-ca53-4231-9e9a-991272353de9">
     <name>Русский</name>
     <synonym>
