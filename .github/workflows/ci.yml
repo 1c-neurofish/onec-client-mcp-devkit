@@ -7,7 +7,6 @@ on:
       - main
     paths:
       - ".github/workflows/**"
-      - "v8project.yaml"
       - "exts/**"
       - "fixtures/**"
       - "tests/**"
@@ -17,7 +16,6 @@ on:
       - main
     paths:
       - ".github/workflows/**"
-      - "v8project.yaml"
       - "exts/**"
       - "fixtures/**"
       - "tests/**"
@@ -29,24 +27,165 @@ concurrency:
 
 permissions:
   contents: read
+  checks: write
+  id-token: write
 
 env:
   V8_VERSION: 8.3.27.1859
   EDT_VERSION: 2025.2.3
-  V8_RUNNER_REV: 30aa04aa5fea101e05162ef6963c6756f86ba852
   LANG: ru_RU.UTF-8
 
 jobs:
-  yaxunit:
-    name: YaXUnit
+  export_to_designer:
+    name: Export EDT sources
     runs-on: ubuntu-22.04
-    timeout-minutes: 90
+    timeout-minutes: 45
     if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
+      - name: Install 1C:EDT
+        uses: 1CDevFlow/onec-setup-action@e1cd5937cb951c3cdeda4bf482f89da5f5e0b148
+        with:
+          type: edt
+          edt_version: ${{ env.EDT_VERSION }}
+          cache: true
+        env:
+          ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
+          ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
+        timeout-minutes: 30
+
+      - name: Export configuration sources
+        uses: alkoleft/onec-edtcli-command-action@eece36333c2c0bbcf8248af508346e545d8178f2
+        with:
+          export: true
+          from: fixtures/configuration
+          to: export/configuration
+          timeout: 15
+        timeout-minutes: 15
+
+      - name: Export client_mcp sources
+        uses: alkoleft/onec-edtcli-command-action@eece36333c2c0bbcf8248af508346e545d8178f2
+        with:
+          export: true
+          from: exts/client-mcp
+          to: export/client_mcp
+          timeout: 15
+        timeout-minutes: 15
+
+      - name: Export test_client sources
+        uses: alkoleft/onec-edtcli-command-action@eece36333c2c0bbcf8248af508346e545d8178f2
+        with:
+          export: true
+          from: exts/test_client
+          to: export/test_client
+          timeout: 15
+        timeout-minutes: 15
+
+      - name: Export tests sources
+        uses: alkoleft/onec-edtcli-command-action@eece36333c2c0bbcf8248af508346e545d8178f2
+        with:
+          export: true
+          from: tests
+          to: export/tests
+          timeout: 15
+        timeout-minutes: 15
+
+      - name: Pack Designer sources
+        run: |
+          cd export
+          7za a -t7z ../export.7z ./
+
+      - name: Upload Designer sources
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: designer-src
+          path: export.7z
+          if-no-files-found: error
+          retention-days: 1
+
+  build_artifacts:
+    name: Build artifacts
+    needs: export_to_designer
+    runs-on: windows-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - name: Install 1C:Enterprise
+        uses: 1CDevFlow/onec-setup-action@e1cd5937cb951c3cdeda4bf482f89da5f5e0b148
+        with:
+          type: onec
+          onec_version: ${{ env.V8_VERSION }}
+          cache: true
+        env:
+          ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
+          ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
+        timeout-minutes: 15
+
+      - name: Download Designer sources
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: designer-src
+
+      - name: Unpack Designer sources
+        run: |
+          mkdir export
+          mkdir binary
+          cd export
+          7z x ../export.7z -y
+
+      - name: Create infobase
+        run: ibcmd infobase create --db-path=file-db --import=export\configuration --apply --force
+        timeout-minutes: 5
+
+      - name: Import client_mcp extension
+        run: ibcmd infobase config import --db-path=file-db --extension=client_mcp export\client_mcp
+        timeout-minutes: 5
+
+      - name: Import test_client extension
+        run: ibcmd infobase config import --db-path=file-db --extension=test_client export\test_client
+        timeout-minutes: 5
+
+      - name: Import tests extension
+        run: ibcmd infobase config import --db-path=file-db --extension=tests export\tests
+        timeout-minutes: 5
+
+      - name: Save client_mcp extension
+        run: ibcmd infobase config save --db-path=file-db --extension=client_mcp binary\client_mcp.cfe
+        timeout-minutes: 5
+
+      - name: Save test_client extension
+        run: ibcmd infobase config save --db-path=file-db --extension=test_client binary\test_client.cfe
+        timeout-minutes: 5
+
+      - name: Save tests extension
+        run: ibcmd infobase config save --db-path=file-db --extension=tests binary\tests.cfe
+        timeout-minutes: 5
+
+      - name: Save configuration
+        run: ibcmd infobase config save --db-path=file-db binary\configuration.cf
+        timeout-minutes: 5
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: build-artifacts
+          path: binary\*.*
+          if-no-files-found: error
+          retention-days: 1
+
+  yaxunit:
+    name: YaXUnit
+    needs: build_artifacts
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+
+    steps:
       - name: Prepare Linux runtime
         run: |
           set -euo pipefail
@@ -79,69 +218,102 @@ jobs:
           ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
         timeout-minutes: 15
 
-      - name: Install 1C:EDT
-        uses: 1CDevFlow/onec-setup-action@e1cd5937cb951c3cdeda4bf482f89da5f5e0b148
+      - name: Download build artifacts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          type: edt
-          edt_version: ${{ env.EDT_VERSION }}
-          cache: true
-        env:
-          ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
-          ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
-        timeout-minutes: 30
+          name: build-artifacts
+          path: binary
 
-      - name: Prepare EDT CLI alias
+      - name: Create infobase
+        run: ibcmd infobase create --db-path=file-db --load=binary/configuration.cf --apply --force
+        timeout-minutes: 5
+
+      - name: Load client_mcp extension
+        uses: 1CDevFlow/workflows/actions/load-extension@48b8f67b1c12add92f2c15a660d4d1011cd279c5
+        with:
+          name: client_mcp
+          path: binary/client_mcp.cfe
+
+      - name: Load test_client extension
+        uses: 1CDevFlow/workflows/actions/load-extension@48b8f67b1c12add92f2c15a660d4d1011cd279c5
+        with:
+          name: test_client
+          path: binary/test_client.cfe
+
+      - name: Load tests extension
+        uses: 1CDevFlow/workflows/actions/load-extension@48b8f67b1c12add92f2c15a660d4d1011cd279c5
+        with:
+          name: tests
+          path: binary/tests.cfe
+
+      - name: Create YaXUnit config
         run: |
-          set -euo pipefail
-          edt_cli="$(command -v 1cedtcli || true)"
-          if [ -z "$edt_cli" ]; then
-            edt_cli="$(command -v 1cedtcli.sh || true)"
-          fi
-          if [ -z "$edt_cli" ]; then
-            edt_cli="$(find /opt/1C -type f \( -name 1cedtcli -o -name 1cedtcli.sh \) -print -quit)"
-          fi
-          if [ -z "$edt_cli" ]; then
-            echo "EDT CLI not found" >&2
-            find /opt/1C -type f -name '1cedtcli*' -print >&2 || true
-            exit 1
-          fi
-          mkdir -p "$RUNNER_TEMP/edt-cli"
-          ln -sf "$edt_cli" "$RUNNER_TEMP/edt-cli/1cedtcli"
-          echo "$RUNNER_TEMP/edt-cli" >> "$GITHUB_PATH"
-
-      - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8
-
-      - name: Cache cargo build
-        uses: Swatinem/rust-cache@aa7c1c80a07a27a84c0aa76d0cef0aad3830e330
-        with:
-          key: v8-runner-${{ env.V8_RUNNER_REV }}
-
-      - name: Install v8-runner
-        run: cargo install --git https://github.com/alkoleft/v8-runner-rust --rev "$V8_RUNNER_REV" --locked
-
-      - name: Initialize infobase and EDT workspace
-        run: xvfb-run -a v8-runner --output json init
-        timeout-minutes: 20
-
-      - name: Validate EDT sources
-        run: v8-runner --output json syntax edt
-        timeout-minutes: 15
+          cat > yaxunit-config.json <<'JSON'
+          {
+            "reportFormat": "jUnit",
+            "reportPath": "report.xml",
+            "closeAfterTests": true,
+            "exitCode": "exit-code.txt",
+            "logging": {
+              "console": true,
+              "file": "log.txt"
+            }
+          }
+          JSON
 
       - name: Run YaXUnit tests
-        run: xvfb-run -a v8-runner --output json test yaxunit all
-        timeout-minutes: 30
+        run: |
+          set -euo pipefail
+          ibsrv --db-path=file-db --daemon &
+          sleep 5
 
-      - name: Upload v8-runner artifacts
+          echo "Checking ibsrv process..."
+          ps aux | grep ibsrv || echo "ibsrv process not found"
+
+          echo "Checking ibsrv port..."
+          netstat -tlnp | grep 8314 || echo "port 8314 is not listening"
+
+          xvfb-run -a -s "-screen 0 1024x768x24" 1cv8c /WS "http://localhost:8314" /C"RunUnitTests=yaxunit-config.json" /L ru /VL ru_RU /DisableStartupDialogs /DisableStartupMessages /DisableUnrecoverableErrorMessage /Out output.log
+        env:
+          DISPLAY: ":99"
+          LANG: ru_RU.UTF-8
+        timeout-minutes: 15
+
+      - name: Upload test artifacts
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: v8-runner-artifacts
+          name: yaxunit-report
           path: |
-            build/logs/**/*.log
-            build/temp/**/*.log
-            build/temp/**/report.xml
-            build/temp/**/config.json
-            build/temp/**/enterprise.out.log
+            report.xml
+            log.txt
+            output.log
+            exit-code.txt
           if-no-files-found: ignore
           retention-days: 7
+
+      - name: Publish YaXUnit report
+        if: always()
+        uses: 1CDevFlow/action-onec-junit-report@a76ff370af97ae96419efd9f24ed77f64436d986
+        with:
+          job_name: YaXUnit
+          check_name: YaXUnit report
+          report_paths: report.xml
+          fail_on_failure: true
+          require_passed_tests: true
+
+      - name: Show YaXUnit log
+        if: always()
+        run: cat log.txt
+        continue-on-error: true
+
+      - name: Show 1C log
+        if: always()
+        run: cat output.log
+        continue-on-error: true
+
+      - name: Cleanup processes
+        if: always()
+        run: |
+          pkill -f ibsrv || echo "ibsrv processes not found"
+          pkill -f xvfb || echo "xvfb processes not found"
