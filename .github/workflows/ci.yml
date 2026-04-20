@@ -92,12 +92,21 @@ jobs:
       - name: Prepare EDT CLI alias
         run: |
           set -euo pipefail
-          edt_cli="$(command -v 1cedtcli || command -v 1cedtcli.sh)"
-          if [ "$(basename "$edt_cli")" = "1cedtcli.sh" ]; then
-            mkdir -p "$RUNNER_TEMP/edt-cli"
-            ln -sf "$edt_cli" "$RUNNER_TEMP/edt-cli/1cedtcli"
-            echo "$RUNNER_TEMP/edt-cli" >> "$GITHUB_PATH"
+          edt_cli="$(command -v 1cedtcli || true)"
+          if [ -z "$edt_cli" ]; then
+            edt_cli="$(command -v 1cedtcli.sh || true)"
           fi
+          if [ -z "$edt_cli" ]; then
+            edt_cli="$(find /opt/1C -type f \( -name 1cedtcli -o -name 1cedtcli.sh \) -print -quit)"
+          fi
+          if [ -z "$edt_cli" ]; then
+            echo "EDT CLI not found" >&2
+            find /opt/1C -type f -name '1cedtcli*' -print >&2 || true
+            exit 1
+          fi
+          mkdir -p "$RUNNER_TEMP/edt-cli"
+          ln -sf "$edt_cli" "$RUNNER_TEMP/edt-cli/1cedtcli"
+          echo "$RUNNER_TEMP/edt-cli" >> "$GITHUB_PATH"
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@29eef336d9b2848a0b548edc03f92a220660cdb8
