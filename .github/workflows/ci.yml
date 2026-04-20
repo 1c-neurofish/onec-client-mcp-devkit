@@ -129,8 +129,6 @@ jobs:
           export_project exts/test_client export/test_client
           export_project tests export/tests
         timeout-minutes: 20
-            fi
-          done
 
       - name: Pack Designer sources
         run: |
