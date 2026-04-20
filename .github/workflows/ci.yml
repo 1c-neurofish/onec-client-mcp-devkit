@@ -97,19 +97,38 @@ jobs:
           workspace="$RUNNER_TEMP/ws"
           echo "Using EDT CLI: $edt_cli"
 
-          xvfb-run -a "$edt_cli" -data "$workspace" -timeout 900 -command export --configuration-files "$PWD/export/configuration" --project "$PWD/fixtures/configuration"
-          xvfb-run -a "$edt_cli" -data "$workspace" -timeout 900 -command export --configuration-files "$PWD/export/client_mcp" --project "$PWD/exts/client-mcp"
-          xvfb-run -a "$edt_cli" -data "$workspace" -timeout 900 -command export --configuration-files "$PWD/export/test_client" --project "$PWD/exts/test_client"
-          xvfb-run -a "$edt_cli" -data "$workspace" -timeout 900 -command export --configuration-files "$PWD/export/tests" --project "$PWD/tests"
-        timeout-minutes: 15
+          show_diagnostics() {
+            ps -ef | grep -E '1cedt|java|eclipse' | grep -v grep || true
+            find "$workspace" -path '*/.metadata/.log' -type f -print -exec tail -200 {} \; || true
+          }
 
-      - name: Check Designer sources
-        run: |
-          set -euo pipefail
-          for export_path in export/configuration export/client_mcp export/test_client export/tests; do
-            if ! find "$export_path" -type f -print -quit | grep -q .; then
-              echo "$export_path is empty" >&2
-              exit 1
+          wait_for_export() {
+            export_path="$1"
+            for _ in $(seq 1 60); do
+              if find "$export_path" -type f -print -quit | grep -q .; then
+                return 0
+              fi
+              sleep 2
+            done
+            echo "$export_path is empty" >&2
+            show_diagnostics
+            exit 1
+          }
+
+          export_project() {
+            source_path="$1"
+            export_path="$2"
+            rm -rf "$export_path"
+            mkdir -p "$export_path"
+            xvfb-run -a "$edt_cli" -data "$workspace" -timeout 900 -v -command export --configuration-files "$PWD/$export_path" --project "$PWD/$source_path"
+            wait_for_export "$export_path"
+          }
+
+          export_project fixtures/configuration export/configuration
+          export_project exts/client-mcp export/client_mcp
+          export_project exts/test_client export/test_client
+          export_project tests export/tests
+        timeout-minutes: 20
             fi
           done
 
