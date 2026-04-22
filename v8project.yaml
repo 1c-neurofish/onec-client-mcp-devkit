@@ -3,7 +3,8 @@ basePath: './'
 workPath: 'build'
 format: EDT
 builder: DESIGNER
-connection: 'File=build/ib'
+infobase:
+  connection: 'File=build/ib'
 source-set:
   - name: client_mcp
     type: EXTENSION
@@ -21,7 +22,7 @@ build:
   partialLoadThreshold: 20
 tools:
   platform:
-    version: 8.3.20
+    version: 8.3.27
   edt-cli:
     version: 2025.2.3
   enterprise:
