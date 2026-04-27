@@ -13,12 +13,13 @@ Resolve the executable before the first run:
 
 1. If the user supplied an absolute `v8-runner` path, use that path consistently.
 2. Otherwise prefer `command -v v8-runner`.
-3. When working inside the `v8-runner` source repository and no installed binary is available, use `cargo run --`.
-4. If no runner is available, stop and report a local environment issue; do not fall back to raw `1cv8` commands.
+3. If no runner is available, stop and report a local environment issue; do not fall back to raw `1cv8` commands.
+
+`v8project.yaml` is the default config file name. When the project uses that default, omit `--config v8project.yaml`; pass `--config` only for a non-default config path.
 
 ```bash
-v8-runner --config v8project.yaml --output json build
-cargo run -- --config v8project.yaml --output json build
+v8-runner --output json build
+v8-runner --config path/to/custom.yaml --output json build
 ```
 
 Use `--output json` when another tool, script, or final answer needs structured results. Use text output for direct human diagnostics.
@@ -26,10 +27,10 @@ Use `--output json` when another tool, script, or final answer needs structured 
 ## First Pass
 
 1. Check whether `v8project.yaml` exists.
-2. If it exists, inspect it before mutating the infobase. Treat `.agents/tools/*.yml` and similar files as hints, not as the active config unless the user selected them.
+2. If it exists, inspect it before mutating the infobase.
 3. If it is missing, run `v8-runner config init` from the 1C project root.
 4. Inspect the generated config before running mutating commands.
-5. Run `v8-runner init` when the file infobase or EDT workspace needs to be created.
+5. Run `v8-runner init` when the file infobase or EDT workspace needs to be created, or when the runner reports that local state is uninitialized.
 6. Run the narrowest validation command that answers the user's goal.
 
 Useful bootstrap commands:
@@ -171,11 +172,14 @@ MCP request fields use `camelCase`.
 - If platform output says `An extension with this name already exists!`, compare `source-set[].name` with each extension metadata name and with existing hash-storage/log names under `workPath`. Fix the contract in `v8project.yaml` rather than deleting the infobase unless the user explicitly asks for reset.
 - If a command returns `unexpected argument found`, read `v8-runner <command> --help` and retry with the displayed syntax before changing project files.
 - If tests pass but diagnostics contain expected negative-case errors, report the test summary first and mention that diagnostics came from asserted failure scenarios.
+- If a runner command fails, report the exact error and separate initialization/setup problems from build, syntax, or test failures.
 
 ## Guardrails
 
+- `v8-runner` commands mutate shared local 1C state; serialize init, build, syntax-check, test, dump, and app-launch actions within one workspace.
 - Do not delete or recreate an infobase, workspace, temp directory, or generated state unless the user explicitly asks or the command itself is the documented recovery path.
 - Do not invent raw `1cv8`, `ibcmd`, or `1cedtcli` flags; prefer the `v8-runner` command surface.
+- Keep follow-up actions scoped to the user's request; do not run unrelated checks by default.
 - Check `git status` before `dump` if the result may overwrite or mix with existing source changes.
 - Preserve failed test artifacts under `workPath/temp/<runner-id>/runs/<run-id>/` for diagnosis instead of cleaning them immediately.
 - Report missing local 1C utilities as environment/setup issues, not as project source failures.

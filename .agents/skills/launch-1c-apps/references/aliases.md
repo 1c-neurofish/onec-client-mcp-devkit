@@ -1,6 +1,6 @@
 # 1C App Launch Aliases
 
-These aliases are supported by the `v8-test-runner` app-launch workflow and may also appear in user requests.
+These aliases are supported by the `v8-runner` launch workflow and may also appear in user requests.
 
 | Normalized kind | Supported aliases |
 | --- | --- |
