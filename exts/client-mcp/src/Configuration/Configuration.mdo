@@ -26,7 +26,7 @@
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
-  <version>0.6.3</version>
+  <version>0.6.4</version>
   <subsystems>Subsystem.Мсп_MCP</subsystems>
   <subsystems>Subsystem.Мсп_Провайдеры</subsystems>
   <commonTemplates>CommonTemplate.Мсп_webTransport</commonTemplates>
@@ -36,6 +36,7 @@
   <commonModules>CommonModule.Мсп_ЛогированиеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_МетаданныеСервер</commonModules>
   <commonModules>CommonModule.Мсп_Ошибки</commonModules>
+  <commonModules>CommonModule.Мсп_ПараметрыЗапускаКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПровайдерыКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПротоколКлиент</commonModules>
   <commonModules>CommonModule.Мсп_РеестрКлиент</commonModules>
