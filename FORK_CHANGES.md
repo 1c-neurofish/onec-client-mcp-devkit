@@ -108,3 +108,43 @@ BSL-сторона (`Мсп_ТранспортСессионКлиент.Module.
 
 - **WS-handshake + auto-reconnect + WS-уровневый ping/pong** → Rust addin (`SteelMorgan/web-transport-addin`).
 - **Application-level JSON-RPC ping и session.register** → BSL (этот репозиторий).
+
+## Технический долг и план рефакторинга
+
+По итогам архитектурного ревью (диалог 2026-05-04) принято решение о чистом разделении слоёв: **transport-only Rust** + **application tools в прикладных расширениях**. Полный анализ и решение — в [ADR-0003: Spawn/Kill tools переезжают в `exts/test_client`](docs/decisions/0003-spawn-tools-in-test-client.md). Парный ADR — `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
+
+### Архитектурный принцип
+
+| Слой | Репозиторий / каталог | Ответственность |
+|------|------------------------|-----------------|
+| Транспорт | `web-transport-addin` (Rust) | WS pump, reconnect, FFI |
+| MCP-ядро | `exts/client-mcp/` (этот репозиторий) | JSON-RPC, реестр tools/resources/prompts, маршрутизация |
+| Прикладные расширения | `exts/test_client/`, `exts/spawn_tools/`, ... (этот репозиторий) | Бизнес-операции, регистрируемые в реестре tools |
+
+В прикладных расширениях уже есть прецедент: `exts/test_client/CommonModules/Мсп_УправлениеТестКлиентом` управляет жизненным циклом локального тест-клиента 1С через `ЗапуститьПриложение`. Spawn/Kill tools для удалённого порождения дочерних 1С-клиентов размещаются по тому же принципу.
+
+### Что переносится в `exts/test_client/`
+
+- Tool `system_spawn_1c_client` — заменяет JSON-RPC `addin.spawn` из Rust.
+- Tool `system_kill_pid` — заменяет JSON-RPC `addin.kill` из Rust.
+- (опц.) Tool `system_list_children` — если будет согласован контракт.
+- Защита: allow-list бинарников и ключей, regex-валидация значений, запрет shell metacharacters.
+
+### Что меняется в ядре `exts/client-mcp/`
+
+- Точечная правка: механизм объявления capabilities от прикладных расширений. Сейчас `["spawn","kill"]` зашиты в Rust; после рефакторинга расширение `test_client` объявляет capabilities само через `Мсп_РеестрКлиент`. Подробнее — в `docs/mcp-test-client/tasks/07-spawn-tools.md` (раздел «Объявление capabilities»).
+
+### Этапы
+
+Поэтапно, синхронизированно с `web-transport-addin` и `v8-client-session-manager`:
+
+1. **Этап А (этот репозиторий):** реализация tools `system_spawn_1c_client` / `system_kill_pid` в `exts/test_client/`. Валидатор. JSON-Schema. YaxUnit-тесты. Старые `addin.spawn` в Rust остаются для совместимости. План — `docs/mcp-test-client/tasks/07-spawn-tools.md`.
+2. **Этап Б (`v8-client-session-manager`):** переключение менеджера с `addin.spawn` / `addin.kill` на MCP-tools. Heartbeat-monitor как замена `addin.child_exited`.
+3. **Этап В (`web-transport-addin`):** удаление `system_capability.rs` и связанных кусков. ADR-0005 переводится в `accepted`.
+
+### Связанные документы
+
+- ADR-0003: `docs/decisions/0003-spawn-tools-in-test-client.md`.
+- Парный ADR: `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
+- Implementation-plan: `docs/mcp-test-client/implementation-plan.md` (этап 7).
+- Рабочий план: `docs/mcp-test-client/tasks/07-spawn-tools.md`.

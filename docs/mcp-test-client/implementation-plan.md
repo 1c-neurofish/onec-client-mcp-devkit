@@ -59,6 +59,16 @@
   - `notifications/*/listChanged`.
   - Ограничение частоты и дебаунс.
 
+### 7. System spawn/kill tools (перенос из Rust addin)
+- Статус: `todo`
+- Рабочий план: `docs/mcp-test-client/tasks/07-spawn-tools.md`
+- Связанный ADR: [`docs/decisions/0003-spawn-tools-in-test-client.md`](../decisions/0003-spawn-tools-in-test-client.md). Парный ADR — `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
+- Содержание:
+  - Tools `system_spawn_1c_client` / `system_kill_pid` в `exts/test_client/`.
+  - Allow-list бинарников/ключей + regex-валидация значений (защита от shell-injection).
+  - Механизм объявления capabilities из прикладного расширения (требует доработки ядра `client-mcp`).
+  - Удаление `addin.spawn` / `addin.kill` из Rust-компоненты после паритета.
+
 ## Заглушки
 - Механизм детекта изменений UI.
 - Контроль частоты уведомлений.
