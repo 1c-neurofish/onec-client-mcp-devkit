@@ -42,6 +42,8 @@
   <commonModules>CommonModule.Мсп_ОкнаКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ПаузаТестКлиент</commonModules>
   <commonModules>CommonModule.Мсп_РесурсыТестКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_СпавнВалидатор</commonModules>
+  <commonModules>CommonModule.Мсп_СпавнИнструменты</commonModules>
   <commonModules>CommonModule.Мсп_УправлениеТестКлиентом</commonModules>
   <commonModules>CommonModule.Мсп_ФормыКлиент</commonModules>
 </mdclass:Configuration>

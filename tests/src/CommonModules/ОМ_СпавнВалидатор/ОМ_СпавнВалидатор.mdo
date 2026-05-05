@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c3e2f4b5-6d7f-5a9b-ae21-2b3c4d5e6f70">
+  <name>ОМ_СпавнВалидатор</name>
+  <synonym>
+    <key>ru</key>
+    <value>MCP валидатор spawn-аргументов</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>

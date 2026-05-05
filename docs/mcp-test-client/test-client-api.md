@@ -253,6 +253,52 @@
 Ошибки:
 - `-32602`, `UI_NOT_READY`, `-32603`.
 
+## System tools
+
+> Перенос из Rust `addin.spawn` / `addin.kill`. ADR — [`docs/decisions/0003-spawn-tools-in-test-client.md`](../decisions/0003-spawn-tools-in-test-client.md). Парный ADR в `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
+
+Эти tools регистрируются прикладным расширением `test_client` (модуль `Мсп_СпавнИнструменты`) и предназначены для управления жизненным циклом дочерних 1С-клиентов через менеджера сессий. Маршрутизация на стороне менеджера идёт по имени tool в `session.register.params.tools` — отдельный механизм `capabilities` упразднён.
+
+### `system_spawn_1c_client`
+
+Запускает дочерний 1С-клиент через `ЗапуститьПриложение` с параметрами от менеджера. PID **не** возвращается — менеджер сопоставляет ребёнка с запросом по `client_uid`, который ребёнок передаст в последующем `session.register`.
+
+Параметры:
+- `kind` (обяз.) — тип роли клиента, `[A-Za-z0-9_-]{1,32}` (`test_client`, `vanessa_manager`, `yaxunit_runner`, …).
+- `client_uid` (обяз.) — UUID, который менеджер ожидает в `session.register` от ребёнка, `[0-9a-fA-F-]{36}`.
+- `binary` — `1cv8 | 1cv8c | auto` (по умолчанию `auto` = `1cv8c`).
+- `corr_id` — корреляционный идентификатор операции, `[A-Za-z0-9_-]{1,64}`.
+- `manager_url` — `ws://` или `wss://` адрес менеджера для прокидывания ребёнку через `/C manager_url=…`.
+- `language` — `ru | en | tr` (`/L<язык>`).
+- `ib` — параметры подключения: `{ server: "<имя_сервера>\\<имя_базы>", user, password }`. Опционально, если не указано — Designer/клиент стартует без `/S` (актуально для тестов на текущей базе через AutoTest).
+- `extra_c_args` — дополнительные `/C`-ключи: `{ mcpMode: "ws|http|auto", mcp_ws_timeout_ms: 1..60000 }`. Любой неразрешённый ключ — отказ.
+
+Контракт безопасности (`Мсп_СпавнВалидатор`):
+- Allow-list бинарей; allow-list ключей `/C`.
+- Регекспы каждого поля без вариативности (см. валидатор).
+- Бан shell-метасимволов `; & | $ \` < > ( ) { } [ ] ! \n \r \t " ' \` в любом строковом значении.
+- Сборка команды через `СтрШаблон` с фиксированными плейсхолдерами, без конкатенации в цикле.
+
+Результат:
+- Успех: `{ ok: true, data: { client_uid, command_line_preview } }`. В `command_line_preview` пароль маскируется в `***`.
+- Ошибка: `{ ok: false, error, details }`, где `error ∈ { validation_failed, binary_not_found, spawn_failed }`.
+
+### `system_kill_pid`
+
+Принудительно завершает процесс по PID. Используется как fallback для зомби-клиентов, не отвечающих на `session.shutdown`.
+
+Параметры:
+- `pid` (обяз.) — целое ≥ 2 (PID 1 запрещён).
+- `signal` — `term | kill` (по умолчанию `term`).
+
+Поведение:
+- Перед kill — проверка существования процесса: Linux `kill -0 <pid>`, Windows `tasklist /FI "PID eq <pid>" /NH | findstr <pid>` (по exit code).
+- Команда: Linux `kill -TERM/-KILL <pid>`, Windows `taskkill /PID <pid> [/F]`.
+
+Результат:
+- Успех: `{ ok: true, data: { pid, signal } }`.
+- Ошибка: `{ ok: false, error, details }`, где `error ∈ { validation_failed, pid_not_found, kill_failed }`.
+
 ## Resources
 - `window://active` — активное окно.
 - `window://{path}` — конкретное окно по навигационной ссылке.
