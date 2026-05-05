@@ -1,7 +1,7 @@
 # ADR-0003: Spawn/Kill tools переезжают в прикладное расширение `exts/test_client`
 
-- Статус: proposed
-- Дата: 2026-05-04
+- Статус: accepted
+- Дата: 2026-05-04 (proposed) → 2026-05-05 (accepted после реализации этапов А/Б/В).
 - Связанные ADR: [ADR-0001 (архитектура провайдеров)](0001-client-mcp-provider-architecture.md), [ADR-0002 (запуск из командной строки)](0002-command-line-mcp-server-startup.md). Парный ADR — `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
 - Связанные документы: [`FORK_CHANGES.md`](../../FORK_CHANGES.md), [`docs/mcp-test-client/implementation-plan.md`](../mcp-test-client/implementation-plan.md), задача `docs/mcp-test-client/tasks/07-spawn-tools.md`.
 
@@ -52,13 +52,13 @@ PID получается **не от tool'а spawn**, а из последующ
 5. **Запрет shell metacharacters.** Любой символ из набора `; & | $ \` ` < > ( ) { } [ ] ! \n \r \t` в любом значении → BLOCK на этапе валидации, до построения команды.
 6. **Сборка через шаблон с фиксированными плейсхолдерами.** Никакой конкатенации в цикле. `СтрШаблон("%1 ENTERPRISE /S\"%2\" /N\"%3\" ...", БинарьВалидный, ServerStringВалидный, ИмяВалидное, ...)`. Каждое значение к моменту подстановки уже прошло regex.
 
-### Capabilities
+### Маршрутизация (без отдельного механизма capabilities)
 
-Расширение `client-mcp` (ядро) запрашивает у каждого загруженного прикладного расширения список capabilities, объявляемых его tools, и собирает в `session.register.params.capabilities`. Концепт: capability = строка, символизирующая способность клиента (например, `"spawn"`, `"kill"`, `"ui_test"`).
+В текущей реализации Rust-форка `web-transport-addin` каждый клиент анонсирует менеджеру массив `capabilities` (например, `["spawn","kill"]`) в `session.register`, и менеджер использует `find_spawner(host_id, "spawn")` для выбора сессии-исполнителя. После переноса tools в BSL эта роль становится избыточной: имя инструмента (`system_spawn_1c_client` / `system_kill_pid`) уже однозначно говорит, какие сессии умеют спавнить.
 
-Ответственность за объявление capabilities лежит на **том расширении**, которое зарегистрировало tool. `exts/test_client/Мсп_СпавнИнструменты` (новый модуль) регистрирует tools и одновременно объявляет capabilities `["spawn", "kill"]`. Если расширение `test_client` не загружено — capabilities `spawn`/`kill` отсутствуют, менеджер не пытается слать спавн на этот клиент.
+Решение: **отдельного механизма `capabilities` не вводим.** В `session.register.params.tools` уже идёт массив с именами инструментов. Менеджер заменяет `find_spawner(host_id, "spawn")` на поиск сессии, в чьём каталоге tools есть имя `system_spawn_1c_client`. Поле `capabilities` в `SessionRecord` менеджера и в payload `session.register` помечается deprecated и удаляется на этапе В вместе с зачисткой `session_params.rs` (см. парный ADR-0005).
 
-Механизм объявления capabilities — отдельная задача (см. план реализации).
+Если расширение `test_client` не загружено — соответствующих tools в каталоге нет, и менеджер просто не находит исполнителя на этом хосте. Поведение функционально эквивалентно «отсутствию capability», но без второго регистра и без правок ядра `client-mcp`.
 
 ### Жизненный цикл (child_exited заменяется heartbeat'ом)
 
