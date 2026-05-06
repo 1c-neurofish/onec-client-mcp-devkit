@@ -1,4 +1,0 @@
-auto-publish=false
-eclipse.preferences.version=1
-module-start-timeout=300000
-runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<runtimes>\n  <runtime id\="3a94f724-ae20-4faa-93aa-cb52668c27c3" id-set\="true" location\="/opt/1cv8/x86_64/8.3.27.2074" name\="\u0410\u0432\u0442\u043E\u043D\u043E\u043C\u043D\u044B\u0439 \u0441\u0435\u0440\u0432\u0435\u0440 8.3.27.2074" runtime-type-id\="com.e1c.g5.v8.dt.platform.standaloneserver.runtime" timestamp\="0" version\="8.3.27.2074"/>\n</runtimes>\n
