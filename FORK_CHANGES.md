@@ -80,27 +80,13 @@ Dual-mode startup через `/C mcpMode=ws|http|auto`:
 
 ### Пинги
 
-Два независимых уровня — каждый ловит свой класс зависаний.
+Используется **только** WS protocol-level Ping/Pong (RFC 6455).
 
-**WebSocket protocol-level ping/pong (RFC 6455):**
-- Где: `tokio_tungstenite` обрабатывает входящие WS-Ping автоматически внутри `WebSocketStream`. См. `web-transport-addin/src/session_integration.rs:202-227` — бинарные/ping/pong/frame фреймы игнорируются на уровне обёртки.
-- Кто инициирует: **никто на стороне приложения**. Ни менеджер, ни addin сами WS-Ping не генерируют. Если их шлёт ОС/прокси/мост — tungstenite ответит автоматически, в BSL это не пробрасывается.
-- Что детектит: разрыв TCP, NAT-timeout, dead peer на уровне сетевого стека.
-- Что НЕ детектит: зависание event-loop 1С — tokio worker отвечает Pong даже если BSL-обработчик заблокирован.
+- Кто инициирует: `v8-session-manager` шлёт WS Ping (opcode 0x9) каждые `mcp.session_manager.ws_ping_interval_ms` (default 20000 мс) из writer-task `run_connection`. Если за `ws_ping_timeout_ms` (default 30000 мс) от клиента не пришло ни одного фрейма (Pong/Text) — менеджер закрывает соединение, через `reconnection_grace_secs` запись удаляется. `ws_ping_interval_ms = 0` отключает Ping.
+- Кто отвечает: `tokio_tungstenite` внутри addin — Pong возвращается автоматически на уровне WebSocket-обёртки, до того как фрейм доходит до BSL. См. `web-transport-addin/src/session_integration.rs:202-227` — Ping/Pong/Frame/Binary в стрим-адаптере игнорируются (Pong уже ушёл).
+- Что детектит: разрыв TCP, NAT-timeout, half-close, dead peer на уровне сетевого стека. Не зависит от состояния BSL event-loop.
 
-**Application-level JSON-RPC ping:**
-- Где (приём): `Мсп_ТранспортСессионКлиент.Module.bsl:259-262`:
-  ```bsl
-  ИначеЕсли Метод = "ping" Тогда
-      Ждать Мсп_СерверОтветы.Отправить(
-          Идентификатор,
-          Новый Структура("jsonrpc, id, result", "2.0", Идентификатор, Новый Структура));
-  ```
-- Кто инициирует: **session-manager** шлёт `{"jsonrpc":"2.0","method":"ping","id":N}` — раз в `mcp.session_manager.app_ping_interval_ms` (default 20000 мс) с таймаутом `app_ping_timeout_ms` (default 5000 мс). Реализация: `v8-session-manager/src/session_manager/ping.rs` (`spawn_app_ping_task` запускается после `session.register`). `app_ping_interval_ms = 0` → пинг отключён.
-- Кто отвечает: BSL-расширение (1С), не Rust. Ответ возвращается через тот же FFI/WS-канал в pending-таблицу менеджера.
-- Что детектит: зависание event-loop 1С — модальный диалог, long-running BSL-операция, заблокированный `ОбработкаВнешнегоСобытия`. Если ответ не пришёл за `app_ping_timeout_ms` или коннект уже мёртвый (`WriterClosed`), менеджер помечает сессию `Disconnected` и через `reconnection_grace_secs` удаляет запись. Generation-aware: на soft reconnect старая ping-task сама завершится по `Disconnected`, новая стартует на новом коннекте.
-
-> **TL;DR.** WS-Ping проверяет, жив ли TCP-стек. Application-level ping проверяет, жив ли event loop 1С. Менеджеру нужен второй, потому что первый может «врать»: tokio worker отвечает Pong за зависшую BSL.
+> **Application-level JSON-RPC ping в форке не используется.** В `Мсп_ТранспортСессионКлиент.Module.bsl` handler `method = "ping"` удалён. Открытая модалка 1С (`Вопрос(...)`, `ОткрытьФормуМодально`) или длинный серверный запрос временно блокируют BSL event-loop, но это **легитимные пользовательские состояния**, а не «зависание». TCP/WS канал в этот момент жив (tokio worker addin'а отвечает Pong), и менеджер не должен ложно сбрасывать такие сессии. Если нужна именно прикладная reachability — реализуйте отдельным MCP-tool'ом, не путая с liveness канала.
 
 ### session.register после connect
 
@@ -108,8 +94,9 @@ BSL-сторона (`Мсп_ТранспортСессионКлиент.Module.
 
 ## TL;DR ответственности
 
-- **WS-handshake + auto-reconnect + WS-уровневый ping/pong** → Rust addin (`SteelMorgan/web-transport-addin`).
-- **Application-level JSON-RPC ping и session.register** → BSL (этот репозиторий).
+- **WS-handshake + auto-reconnect + WS-уровневый ping/pong** → Rust addin (`SteelMorgan/web-transport-addin`) + WS Ping initiator в `v8-session-manager`.
+- **session.register** → BSL (этот репозиторий).
+- Application-level ping не используется (см. выше).
 
 ## Технический долг и план рефакторинга
 
