@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ОткрытьПанельУправления" id="5">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОткрытьПанельУправления</CommandName>
+				<ExtendedTooltip name="ОткрытьПанельУправленияРасширеннаяПодсказка" id="6"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+	</Events>
+	<ChildItems>
+		<Button name="ЗарегистрироватьИнструменты" id="1">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.ЗарегистрироватьИнструменты</CommandName>
+			<ExtendedTooltip name="ЗарегистрироватьИнструментыРасширеннаяПодсказка" id="2"/>
+		</Button>
+		<Button name="ЗапуститьСервер" id="3">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.ЗапуститьСервер</CommandName>
+			<ExtendedTooltip name="ЗапуститьСерверРасширеннаяПодсказка" id="4"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВнешнийИнструментКалькулятор</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОткрытьПанельУправления" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть панель управления</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьПанельУправления</Action>
+		</Command>
+		<Command name="ЗарегистрироватьИнструменты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Зарегистрировать инструменты</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗарегистрироватьИнструменты</Action>
+		</Command>
+		<Command name="ЗапуститьСервер" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить сервер</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ЗапуститьСервер</Action>
+		</Command>
+	</Commands>
+</Form>

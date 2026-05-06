@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="Configuration.configuration" id="c39129f8-1fa7-465b-b2bb-75cc55f6f820" configVersion="fba9e4e77e544947ae9969b234f626b000000000"/>
+		<Metadata name="Configuration.configuration.CommandInterface" id="5cb8940b-4702-4cdf-8e26-bca88e152aa3.a" configVersion="71e228a9b7ebc647ba49953e81f0cc3400000000"/>
+		<Metadata name="Configuration.configuration.MainSectionCommandInterface" id="5cb8940b-4702-4cdf-8e26-bca88e152aa3.9" configVersion="a34ad953c58cf54f8982e874c99b66cb00000000"/>
+		<Metadata name="DataProcessor.ВнешнийИнструментАсинхроннаяОперация" id="215a6f9d-ad1f-4ef1-bf84-9e57c308ec9c" configVersion="7b4c64e2ab2885418544a017fc13bf4d00000000"/>
+		<Metadata name="DataProcessor.ВнешнийИнструментАсинхроннаяОперация.Form.Форма" id="90472b00-1742-45bf-985c-009da08a327f" configVersion="7d582f7bc2b7064c829588bdb10ee41b00000000"/>
+		<Metadata name="DataProcessor.ВнешнийИнструментАсинхроннаяОперация.Form.Форма.Form" id="90472b00-1742-45bf-985c-009da08a327f.0" configVersion="c42a9ae0f57c5e4d8c5c77fc2cc2e50400000000"/>
+		<Metadata name="DataProcessor.ВнешнийИнструментКалькулятор" id="3b281f60-f1eb-4b13-9cb7-cc679b789632" configVersion="408d6f83e531204081bc802376c87b7200000000"/>
+		<Metadata name="DataProcessor.ВнешнийИнструментКалькулятор.Form.Форма" id="0755cc26-5c5f-4658-ae4b-05743adbdcf8" configVersion="609e4728ffd63843bb1a55d69e5be5dd00000000"/>
+		<Metadata name="DataProcessor.ВнешнийИнструментКалькулятор.Form.Форма.Form" id="0755cc26-5c5f-4658-ae4b-05743adbdcf8.0" configVersion="1e3f7c769e8c834d8f0717e56dd314af00000000"/>
+		<Metadata name="DataProcessor.ДемоMCPКомпоненты" id="931837e1-73c5-49d9-9b29-549e4023dc3b" configVersion="0c73b67e21b9cd45bbef0bd03f8cc74d00000000"/>
+		<Metadata name="DataProcessor.ДемоMCPКомпоненты.Form.Форма" id="74f4d856-c097-40f2-bfbc-dd3c6dbfbc73" configVersion="1317f730b10d1542bdcfd413ea97838400000000"/>
+		<Metadata name="DataProcessor.ДемоMCPКомпоненты.Form.Форма.Form" id="74f4d856-c097-40f2-bfbc-dd3c6dbfbc73.0" configVersion="18f6443ee3be92458ecbe951ec6b3f8900000000"/>
+		<Metadata name="DataProcessor.МодальныеДиалоги" id="b2c3d4e5-0001-0001-0001-000000000001" configVersion="9f7e5abef2a93f4ab99db046fdeee0d300000000">
+			<Metadata name="DataProcessor.МодальныеДиалоги.Command.ОткрытьОсновнуюФорму" id="b2c3d4e5-0020-0020-0020-000000000020"/>
+		</Metadata>
+		<Metadata name="DataProcessor.МодальныеДиалоги.Command.ОткрытьОсновнуюФорму.CommandModule" id="b2c3d4e5-0020-0020-0020-000000000020.2" configVersion="bd995ef50502b44eb8089147041251fa00000000"/>
+		<Metadata name="DataProcessor.МодальныеДиалоги.Form.ДочерняяФорма" id="b2c3d4e5-0011-0011-0011-000000000011" configVersion="35796c5476816f4ca384b7f2c827b04d00000000"/>
+		<Metadata name="DataProcessor.МодальныеДиалоги.Form.ДочерняяФорма.Form" id="b2c3d4e5-0011-0011-0011-000000000011.0" configVersion="62f3e2cefd58e9458e9ae9a02e1a191f00000000"/>
+		<Metadata name="DataProcessor.МодальныеДиалоги.Form.ОсновнаяФорма" id="b2c3d4e5-0010-0010-0010-000000000010" configVersion="382862b72b676f4482bb5c037efb75a100000000"/>
+		<Metadata name="DataProcessor.МодальныеДиалоги.Form.ОсновнаяФорма.Form" id="b2c3d4e5-0010-0010-0010-000000000010.0" configVersion="1a124a9bee9a514bb5f9332ddb31aa0e00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода" id="133cd63e-c831-4665-bbd3-e40876846359" configVersion="bc6258d9d691bb4f98bf5d1ce858f68800000000">
+			<Metadata name="DataProcessor.ТестированиеВвода.Command.ОткрытьПростыеПоляВвода" id="65b3558d-1cae-497a-8ade-66adb262b5a4"/>
+			<Metadata name="DataProcessor.ТестированиеВвода.Command.ОткрытьУправляемыеЭлементы" id="a31ade0f-9740-4aed-9a77-2e9eb02ec568"/>
+			<Metadata name="DataProcessor.ТестированиеВвода.Command.ОткрытьГруппыИВкладки" id="b2381d32-0dc0-48e2-849e-3b3d763e9c65"/>
+		</Metadata>
+		<Metadata name="DataProcessor.ТестированиеВвода.Command.ОткрытьГруппыИВкладки.CommandModule" id="b2381d32-0dc0-48e2-849e-3b3d763e9c65.2" configVersion="7576a20eb757d74fa7d329af9c9e572d00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Command.ОткрытьПростыеПоляВвода.CommandModule" id="65b3558d-1cae-497a-8ade-66adb262b5a4.2" configVersion="f9d9c00e11dd7b41b46c09aa384a47ec00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Command.ОткрытьУправляемыеЭлементы.CommandModule" id="a31ade0f-9740-4aed-9a77-2e9eb02ec568.2" configVersion="bc9b3843b6c2f2428f8b88b4d4556fa500000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.ГруппыИВкладки" id="b2b1839f-3f25-4c6d-ac66-a782ec5d81f9" configVersion="bcf0cb9d6cfdca45990610412748092900000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.ГруппыИВкладки.Form" id="b2b1839f-3f25-4c6d-ac66-a782ec5d81f9.0" configVersion="de6fb529f28a5749b54d2d456348b91600000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.ПростыеПоляВвода" id="f9fb09fb-26c6-4b6d-bd90-c4f8ddc5d873" configVersion="adc6b1bbdf21794eb47de9ee0cf0242400000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.ПростыеПоляВвода.Form" id="f9fb09fb-26c6-4b6d-bd90-c4f8ddc5d873.0" configVersion="e2c9a0037b04b54599aacc17e4221d7c00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.ТаблицаЗначений" id="5580b050-8115-4e1c-be61-e4a004e4e692" configVersion="c9152c5a6f29c04c8b1f11bc9b99f30c00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.ТаблицаЗначений.Form" id="5580b050-8115-4e1c-be61-e4a004e4e692.0" configVersion="30193e3f0cc0df449bae1f2b5dffba1b00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.УправляемыеЭлементы" id="d941e6df-17ab-4506-baab-745cebb51125" configVersion="3872aeea1a35774c90ff1b9591efb2ab00000000"/>
+		<Metadata name="DataProcessor.ТестированиеВвода.Form.УправляемыеЭлементы.Form" id="d941e6df-17ab-4506-baab-745cebb51125.0" configVersion="41541ba609a22745bcd2012471d8abbe00000000"/>
+		<Metadata name="Language.Русский" id="16ed7f69-ca53-4231-9e9a-991272353de9" configVersion="10f098d95de6bf4484a33b2fb9000ba300000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

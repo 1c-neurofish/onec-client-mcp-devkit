@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="CommonModule.Мсп_URIКлиент" id="23864f53-c1b4-4c31-976a-c8339178f32b" configVersion="0f4e3a972aedc837dd1f95106348f89f50f47785"/>
+		<Metadata name="CommonModule.Мсп_URIКлиент.Module" id="23864f53-c1b4-4c31-976a-c8339178f32b.0" configVersion="a95af5b8f04225f165a6957b0f511f3989f30ab7"/>
+		<Metadata name="CommonModule.Мсп_ИнструментТестКлиент" id="f7304fa8-1cc7-4a47-9861-b6b4c58f1e8d" configVersion="5eb72faad5477f2402c40690aa40a2e0a58660af"/>
+		<Metadata name="CommonModule.Мсп_ИнструментТестКлиент.Module" id="f7304fa8-1cc7-4a47-9861-b6b4c58f1e8d.0" configVersion="b637a9db0c1311701f5fb6cdcd174c2f3e4344ab"/>
+		<Metadata name="CommonModule.Мсп_ОкнаКлиент" id="360967bf-01a1-4d7d-9288-12ccdad97096" configVersion="0d5bb42a21b15fa5e8933d3cfe0e521d4b8eb95e"/>
+		<Metadata name="CommonModule.Мсп_ОкнаКлиент.Module" id="360967bf-01a1-4d7d-9288-12ccdad97096.0" configVersion="3419add403fad658b3f0935ab74f3087473df775"/>
+		<Metadata name="CommonModule.Мсп_ПаузаТестКлиент" id="8e2cf747-f8c9-4455-90ba-27ee53b19010" configVersion="5e1d316afbd2e233a136c6822025209255555801"/>
+		<Metadata name="CommonModule.Мсп_ПаузаТестКлиент.Module" id="8e2cf747-f8c9-4455-90ba-27ee53b19010.0" configVersion="4a808699ebc7dc248030a301cae9fd95516433f5"/>
+		<Metadata name="CommonModule.Мсп_РесурсыТестКлиент" id="196a6828-0d33-4473-9bfe-da6a73b23e2f" configVersion="af508197dee4e8e39f5da1261506331906a45f94"/>
+		<Metadata name="CommonModule.Мсп_РесурсыТестКлиент.Module" id="196a6828-0d33-4473-9bfe-da6a73b23e2f.0" configVersion="d9021dbdd2640fff4a31f4a1139ac185b2b710c5"/>
+		<Metadata name="CommonModule.Мсп_СпавнВалидатор" id="b2d1f3a4-5c6e-4f8a-9d10-1a2b3c4d5e6f" configVersion="e1caf092ba6ebba3cbcd80c7a0d3acd33ded4e67"/>
+		<Metadata name="CommonModule.Мсп_СпавнВалидатор.Module" id="b2d1f3a4-5c6e-4f8a-9d10-1a2b3c4d5e6f.0" configVersion="f37d6c86c5f742892882157a5222fc0b378461c7"/>
+		<Metadata name="CommonModule.Мсп_СпавнИнструменты" id="d4f3e5c6-7a8b-4c9d-be32-3c4d5e6f7081" configVersion="6c44559f44a24c16dcc11cdd3667892c1de2c5d1"/>
+		<Metadata name="CommonModule.Мсп_СпавнИнструменты.Module" id="d4f3e5c6-7a8b-4c9d-be32-3c4d5e6f7081.0" configVersion="d8de24d07b32a84993906d38ae5e653e53216bb8"/>
+		<Metadata name="CommonModule.Мсп_УправлениеТестКлиентом" id="302d7d72-805d-48f5-9d2c-f08bc48e632d" configVersion="a3852becb6e68485fe9047da9031d15cea0e0c05"/>
+		<Metadata name="CommonModule.Мсп_УправлениеТестКлиентом.Module" id="302d7d72-805d-48f5-9d2c-f08bc48e632d.0" configVersion="afeaea0a7580d7c29122b772e5702ce37d02c94d"/>
+		<Metadata name="CommonModule.Мсп_ФормыКлиент" id="e43c386d-92fc-4db0-a678-8919396a1a4d" configVersion="02fe798c91e9037d068e668665cb97f879fecb1f"/>
+		<Metadata name="CommonModule.Мсп_ФормыКлиент.Module" id="e43c386d-92fc-4db0-a678-8919396a1a4d.0" configVersion="3082343ff675913ca1c78484a3fb866d461d5359"/>
+		<Metadata name="Configuration.test_client" id="11ceab33-dcea-40ec-9691-c33d5924a0e2" configVersion="27b054f3ae3ca19d72c042a61f00c549d62c2b77"/>
+		<Metadata name="Configuration.test_client.CommandInterface" id="b7d2671e-a626-4001-aecd-6e0d5ff5081b.a" configVersion="fdaec039eea90396e8275a4185f01ff2ce9f09af"/>
+		<Metadata name="Configuration.test_client.ExternalConnectionModule" id="b7d2671e-a626-4001-aecd-6e0d5ff5081b.5" configVersion="ee6866f42793d99eab00a6606e3a95ea70b7cede"/>
+		<Metadata name="Configuration.test_client.MainSectionCommandInterface" id="b7d2671e-a626-4001-aecd-6e0d5ff5081b.9" configVersion="fdaec039eea90396e8275a4185f01ff2ce9f09af"/>
+		<Metadata name="Configuration.test_client.ManagedApplicationModule" id="b7d2671e-a626-4001-aecd-6e0d5ff5081b.6" configVersion="7a4431035dbd25cdbed04c0469f62c78b6501a0f"/>
+		<Metadata name="Configuration.test_client.SessionModule" id="b7d2671e-a626-4001-aecd-6e0d5ff5081b.7" configVersion="6665c431b7817c763a20b642041daec8b14490ce"/>
+		<Metadata name="Role.тк_ОсновнаяРоль" id="c8ad99c2-9894-4cba-a835-2a128587b5a3" configVersion="2babcd0f1c1cbc5e70d94dc212208e7ffa1db6df"/>
+		<Metadata name="Role.тк_ОсновнаяРоль.Rights" id="c8ad99c2-9894-4cba-a835-2a128587b5a3.0" configVersion="945ca08e5fa00dd442aaa42b9afe0f4ca7f73d26"/>
+		<Metadata name="Subsystem.Тк_Мсп_Провайдеры" id="5413628d-3656-4ed3-97b5-2e09e4e1fad7" configVersion="9dec60802b3d345ed0b9da8517d405c0ee7aed40"/>
+		<Metadata name="Subsystem.Тк_Мсп_Провайдеры.CommandInterface" id="5413628d-3656-4ed3-97b5-2e09e4e1fad7.1" configVersion="fdaec039eea90396e8275a4185f01ff2ce9f09af"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
