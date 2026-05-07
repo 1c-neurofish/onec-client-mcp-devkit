@@ -25,4 +25,7 @@ Thumbs.db
 !.agents/tools/v8-runner.yml
 .codex-mount
 
-build
+build.context/
+
+# Build artefacts (locally generated)
+build/

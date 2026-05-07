@@ -90,6 +90,7 @@
   <commonModules>CommonModule.ОМ_Сервер</commonModules>
   <commonModules>CommonModule.ОМ_СериализацияКлиент</commonModules>
   <commonModules>CommonModule.ОМ_СостояниеКлиент</commonModules>
+  <commonModules>CommonModule.ОМ_СпавнВалидатор</commonModules>
   <commonModules>CommonModule.ОМ_ТестированиеВводаФормы</commonModules>
   <commonModules>CommonModule.ОМ_УправлениеТестКлиентом</commonModules>
   <commonModules>CommonModule.ОМ_ФормыКлиент</commonModules>
