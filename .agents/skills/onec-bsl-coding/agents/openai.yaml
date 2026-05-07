@@ -1,4 +1,0 @@
-interface:
-  display_name: "1C BSL Coding"
-  short_description: "Write and review 1C BSL code with standards"
-  default_prompt: "Use $onec-bsl-coding to draft clean 1C BSL code for a new feature."

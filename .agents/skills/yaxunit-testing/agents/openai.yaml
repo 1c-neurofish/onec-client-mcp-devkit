@@ -1,4 +1,0 @@
-interface:
-  display_name: "YAxUnit Testing"
-  short_description: "Run and scope YAxUnit tests in repo"
-  default_prompt: "Use $yaxunit-testing to run or scope YAxUnit tests."

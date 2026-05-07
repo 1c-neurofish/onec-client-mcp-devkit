@@ -33,6 +33,7 @@
   <commonModules>CommonModule.Мсп_ЗадачиКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментИнфоИБКлиент</commonModules>
   <commonModules>CommonModule.Мсп_Коллекции</commonModules>
+  <commonModules>CommonModule.Мсп_ГлобальныеОбработчикиКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ЛогированиеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_МетаданныеСервер</commonModules>
   <commonModules>CommonModule.Мсп_Ошибки</commonModules>

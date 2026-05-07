@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="630abdd8-fd4b-4f51-8401-08f64e5c07ab">
+  <name>ТестКомпонентаMCP</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тестовая компонента MCP</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>
