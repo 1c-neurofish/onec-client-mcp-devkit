@@ -1,0 +1,21 @@
+[[repos]]
+repo = "https://github.com/alkoleft/prec-bsl"
+rev = "v0.1.5"
+
+  [[repos.hooks]]
+  id = "prec-bsl"
+  args = ["--ignore-remote-merge-commit"]
+
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+
+  [[repos.hooks]]
+  id = "end-of-file-fixer"
+
+  [[repos.hooks]]
+  id = "fix-byte-order-marker"
+
+  [[repos.hooks]]
+  id = "mixed-line-ending"
+  args = ["--fix", "lf"]

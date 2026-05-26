@@ -2,7 +2,7 @@
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
   <items xsi:type="form:FormField">
     <name>ТекстОтвета</name>
-    <id>1</id>
+    <id>12</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -13,7 +13,7 @@
     </dataPath>
     <extendedTooltip>
       <name>ТекстОтветаРасширеннаяПодсказка</name>
-      <id>3</id>
+      <id>16</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -23,7 +23,7 @@
     </extendedTooltip>
     <contextMenu>
       <name>ТекстОтветаКонтекстноеМеню</name>
-      <id>2</id>
+      <id>14</id>
       <autoFill>true</autoFill>
     </contextMenu>
     <type>InputField</type>
@@ -42,10 +42,10 @@
   </items>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
-    <id>-1</id>
+    <id>18</id>
     <items xsi:type="form:Button">
       <name>ФормаКомандаВвестиСтроку</name>
-      <id>4</id>
+      <id>17</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -151,13 +151,13 @@
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
   <autoFillCheck>true</autoFillCheck>
-  <allowFormCustomize>true</allowFormCustomize>
+  <allowFormCustomize>false</allowFormCustomize>
   <enabled>true</enabled>
   <showTitle>true</showTitle>
   <showCloseButton>true</showCloseButton>
   <attributes>
     <name>Объект</name>
-    <id>1</id>
+    <id>13</id>
     <valueType>
       <types>DataProcessorObject.МодальныеДиалоги</types>
     </valueType>
@@ -175,7 +175,7 @@
       <key>ru</key>
       <value>Текст ответа</value>
     </title>
-    <id>2</id>
+    <id>15</id>
     <valueType>
       <types>String</types>
       <stringQualifiers/>

@@ -2,7 +2,7 @@
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
   <items xsi:type="form:Button">
     <name>ЗарегистрироватьИнструменты</name>
-    <id>1</id>
+    <id>7</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -10,7 +10,7 @@
     </userVisible>
     <extendedTooltip>
       <name>ЗарегистрироватьИнструментыРасширеннаяПодсказка</name>
-      <id>2</id>
+      <id>9</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -28,7 +28,7 @@
   </items>
   <items xsi:type="form:Button">
     <name>ЗапуститьСервер</name>
-    <id>3</id>
+    <id>10</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -54,7 +54,7 @@
   </items>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
-    <id>-1</id>
+    <id>11</id>
     <items xsi:type="form:Button">
       <name>ОткрытьПанельУправления</name>
       <id>5</id>
@@ -92,13 +92,13 @@
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
   <autoFillCheck>true</autoFillCheck>
-  <allowFormCustomize>true</allowFormCustomize>
+  <allowFormCustomize>false</allowFormCustomize>
   <enabled>true</enabled>
   <showTitle>true</showTitle>
   <showCloseButton>true</showCloseButton>
   <attributes>
     <name>Объект</name>
-    <id>1</id>
+    <id>8</id>
     <valueType>
       <types>DataProcessorObject.ВнешнийИнструментКалькулятор</types>
     </valueType>

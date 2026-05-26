@@ -26,14 +26,14 @@
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
-  <version>0.6.4</version>
+  <version>0.6.5</version>
   <subsystems>Subsystem.Мсп_MCP</subsystems>
   <subsystems>Subsystem.Мсп_Провайдеры</subsystems>
   <commonTemplates>CommonTemplate.Мсп_webTransport</commonTemplates>
+  <commonModules>CommonModule.Мсп_ГлобальныеОбработчикиКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ЗадачиКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментИнфоИБКлиент</commonModules>
   <commonModules>CommonModule.Мсп_Коллекции</commonModules>
-  <commonModules>CommonModule.Мсп_ГлобальныеОбработчикиКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ЛогированиеКлиент</commonModules>
   <commonModules>CommonModule.Мсп_МетаданныеСервер</commonModules>
   <commonModules>CommonModule.Мсп_Ошибки</commonModules>

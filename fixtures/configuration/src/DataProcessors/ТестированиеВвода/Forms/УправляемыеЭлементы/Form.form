@@ -2,7 +2,7 @@
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
   <items xsi:type="form:FormField">
     <name>Флажок</name>
-    <id>1</id>
+    <id>31</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -13,7 +13,7 @@
     </dataPath>
     <extendedTooltip>
       <name>ФлажокРасширеннаяПодсказка</name>
-      <id>3</id>
+      <id>35</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -23,7 +23,7 @@
     </extendedTooltip>
     <contextMenu>
       <name>ФлажокКонтекстноеМеню</name>
-      <id>2</id>
+      <id>33</id>
       <autoFill>true</autoFill>
     </contextMenu>
     <type>CheckBoxField</type>
@@ -35,10 +35,10 @@
   </items>
   <items xsi:type="form:FormGroup">
     <name>ГруппаПереключателей</name>
-    <id>4</id>
+    <id>36</id>
     <items xsi:type="form:FormField">
       <name>ПереключательА</name>
-      <id>6</id>
+      <id>38</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -59,7 +59,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПереключательАКонтекстноеМеню</name>
-        <id>7</id>
+        <id>39</id>
         <autoFill>true</autoFill>
       </contextMenu>
       <type>CheckBoxField</type>
@@ -146,7 +146,7 @@
     </title>
     <extendedTooltip>
       <name>ГруппаПереключателейРасширеннаяПодсказка</name>
-      <id>5</id>
+      <id>37</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -322,7 +322,7 @@
   </items>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
-    <id>-1</id>
+    <id>40</id>
     <items xsi:type="form:Button">
       <name>ФормаВыполнитьДействие</name>
       <id>27</id>
@@ -385,7 +385,7 @@
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
   <autoFillCheck>true</autoFillCheck>
-  <allowFormCustomize>true</allowFormCustomize>
+  <allowFormCustomize>false</allowFormCustomize>
   <enabled>true</enabled>
   <showTitle>true</showTitle>
   <showCloseButton>true</showCloseButton>
@@ -395,7 +395,7 @@
       <key>ru</key>
       <value>Флажок</value>
     </title>
-    <id>1</id>
+    <id>32</id>
     <valueType>
       <types>Boolean</types>
     </valueType>
@@ -412,7 +412,7 @@
       <key>ru</key>
       <value>Вариант А</value>
     </title>
-    <id>2</id>
+    <id>34</id>
     <valueType>
       <types>Boolean</types>
     </valueType>

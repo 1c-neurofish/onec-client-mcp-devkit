@@ -2,7 +2,7 @@
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
   <items xsi:type="form:Table">
     <name>Таблица</name>
-    <id>5</id>
+    <id>36</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -282,10 +282,10 @@
   </items>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
-    <id>-1</id>
+    <id>37</id>
     <items xsi:type="form:Button">
       <name>ФормаЗаполнитьТаблицу</name>
-      <id>1</id>
+      <id>30</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -293,7 +293,7 @@
       </userVisible>
       <extendedTooltip>
         <name>ФормаЗаполнитьТаблицуРасширеннаяПодсказка</name>
-        <id>2</id>
+        <id>32</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -310,7 +310,7 @@
     </items>
     <items xsi:type="form:Button">
       <name>ФормаОчиститьТаблицу</name>
-      <id>3</id>
+      <id>34</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -318,7 +318,7 @@
       </userVisible>
       <extendedTooltip>
         <name>ФормаОчиститьТаблицуРасширеннаяПодсказка</name>
-        <id>4</id>
+        <id>35</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -341,7 +341,7 @@
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
   <autoFillCheck>true</autoFillCheck>
-  <allowFormCustomize>true</allowFormCustomize>
+  <allowFormCustomize>false</allowFormCustomize>
   <enabled>true</enabled>
   <showTitle>true</showTitle>
   <showCloseButton>true</showCloseButton>
@@ -351,7 +351,7 @@
       <key>ru</key>
       <value>Таблица</value>
     </title>
-    <id>1</id>
+    <id>31</id>
     <valueType>
       <types>ValueTable</types>
     </valueType>
@@ -367,7 +367,7 @@
         <key>ru</key>
         <value>Строка</value>
       </title>
-      <id>2</id>
+      <id>33</id>
       <valueType>
         <types>String</types>
         <stringQualifiers/>
