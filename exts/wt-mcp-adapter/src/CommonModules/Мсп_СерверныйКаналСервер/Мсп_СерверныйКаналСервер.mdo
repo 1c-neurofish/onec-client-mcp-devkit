@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a57328e-1627-4acf-8b77-e78f1edb2967">
+  <name>Мсп_СерверныйКаналСервер</name>
+  <synonym>
+    <key>ru</key>
+    <value>Серверный канал MCP</value>
+  </synonym>
+  <server>true</server>
+  <serverCall>true</serverCall>
+</mdclass:CommonModule>

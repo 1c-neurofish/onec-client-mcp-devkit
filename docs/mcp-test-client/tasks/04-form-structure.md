@@ -59,8 +59,8 @@
 - Обновлены API-документы и тестовые модули под контракт `form://{name}`.
 
 ## Проверки выполнения
-- `update_database` выполнен успешно для доступного приложения `client_mcp` проекта `Конфигурация` (для extension-проекта `client_mcp` application ID отсутствует).
-- `get_project_errors` для `client_mcp` с `severity=ERRORS` не выявил ошибок.
+- `update_database` выполнен успешно для доступного приложения `wt_mcp_adapter` проекта `Конфигурация` (для extension-проекта `wt_mcp_adapter` application ID отсутствует).
+- `get_project_errors` для `wt_mcp_adapter` с `severity=ERRORS` не выявил ошибок.
 - Выполнена revalidate проверка объектов `CommonModule.Мсп_ФормыКлиент`, `CommonModule.Мсп_РесурсыТестКлиент`, `CommonModule.Мсп_ПротоколКлиент`.
 - Точечные YAxUnit-модули `ОМ_ФормыКлиент` и `ОМ_Провайдеры` обновлены; отдельный автоматизированный запуск YAxUnit в этом workspace не настроен.
 

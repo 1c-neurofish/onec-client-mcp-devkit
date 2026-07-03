@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="39e771e9-7353-4352-b9ac-5aff20b0a23b">
+  <name>Мсп_ПоддержкаСерверногоКанала</name>
+  <synonym>
+    <key>ru</key>
+    <value>Поддержка серверного канала MCP</value>
+  </synonym>
+  <methodName>CommonModule.Мсп_СерверныйКаналСервер.ПоддержатьКанал</methodName>
+  <description>Поддержка серверного WS-канала MCP</description>
+  <key>Мсп_СерверныйКаналСервер.ПоддержатьКанал</key>
+  <use>false</use>
+  <predefined>true</predefined>
+  <restartCountOnFailure>1</restartCountOnFailure>
+  <restartIntervalOnFailure>5</restartIntervalOnFailure>
+</mdclass:ScheduledJob>

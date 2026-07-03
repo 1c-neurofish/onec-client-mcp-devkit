@@ -2,11 +2,11 @@
 
 ## Контекст
 План охватывает ядро MCP-решения, которое сейчас сосредоточено в модулях:
-- `exts/client-mcp/src/CommonModules/Мсп_Сервер/Module.bsl`
-- `exts/client-mcp/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
-- `exts/client-mcp/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
-- `exts/client-mcp/src/CommonModules/Мсп_РеестрКлиент/Module.bsl`
-- `exts/client-mcp/src/CommonModules/Мсп_Ошибки/Module.bsl`
+- `exts/wt-mcp-adapter/src/CommonModules/Мсп_Сервер/Module.bsl`
+- `exts/wt-mcp-adapter/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
+- `exts/wt-mcp-adapter/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
+- `exts/wt-mcp-adapter/src/CommonModules/Мсп_РеестрКлиент/Module.bsl`
+- `exts/wt-mcp-adapter/src/CommonModules/Мсп_Ошибки/Module.bsl`
 - `tests/src/CommonModules/ОМ_ПротоколКлиент/Module.bsl`
 - `tests/src/CommonModules/ОМ_Сервер/Module.bsl`
 
@@ -89,9 +89,9 @@
   3. Проверить `docs/extending.md` и соседние материалы на остатки старой терминологии.
   4. При необходимости добавить короткое пояснение о переходной терминологии, чтобы не делать массовый rename на этом этапе.
 - Затрагиваемые файлы:
-  - `exts/client-mcp/src/CommonModules/Мсп_Сервер/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_РеестрКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_Сервер/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_РеестрКлиент/Module.bsl`
   - `docs/extending.md`
 - Проверка:
   - ручной grep по `потоков`, `stream`, `responseMode` в ядре и docs;
@@ -123,8 +123,8 @@
   - либо расширить существующие модули минимальными конструкторами;
   - либо ввести узкий служебный модуль контрактов, если это уменьшит дублирование без создания лишнего слоя.
 - Затрагиваемые файлы:
-  - `exts/client-mcp/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
   - при необходимости новый узкий служебный модуль контрактов
 - Проверка:
   - модульные тесты на конструкторы и на сохранение текущего поведения;
@@ -158,8 +158,8 @@
   3. Оставить транспорту только вызов координирующего слоя и отправку ответов в компоненту.
   4. Убрать прямые вызовы `Мсп_ТранспортКлиент.*` из `Мсп_ПротоколКлиент`.
 - Затрагиваемые файлы:
-  - `exts/client-mcp/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
   - возможно новый coordination module
 - Проверка:
   - `rg` по двусторонним зависимостям между модулями;
@@ -193,7 +193,7 @@
   3. Затем выделить parsing/dispatch входящих событий.
   4. Оставить в `Мсп_ТранспортКлиент` только facade или координацию верхнего уровня.
 - Затрагиваемые файлы:
-  - `exts/client-mcp/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ТранспортКлиент/Module.bsl`
   - новые узкие служебные модули транспорта
 - Проверка:
   - smoke build;
@@ -283,14 +283,14 @@
   11. Обновить только `docs/extending.md`, чтобы отразить новый public API и явно зафиксировать,
       что broad rename внутренних модулей остаётся вне scope.
 - Затрагиваемые файлы:
-  - `exts/client-mcp/src/CommonModules/Мсп_Сервер/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_СхемаПараметров/Module.bsl` или локальный replacement `Мсп_Схема`
-  - `exts/client-mcp/src/CommonModules/Мсп_Ошибки/Module.bsl`
-  - новый `exts/client-mcp/src/CommonModules/Мсп_Результаты/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_РеестрКлиент/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_ПровайдерыКлиент/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
-  - `exts/client-mcp/src/CommonModules/Мсп_ТранспортСобытияКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_Сервер/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_СхемаПараметров/Module.bsl` или локальный replacement `Мсп_Схема`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_Ошибки/Module.bsl`
+  - новый `exts/wt-mcp-adapter/src/CommonModules/Мсп_Результаты/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_РеестрКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ПровайдерыКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ПротоколКлиент/Module.bsl`
+  - `exts/wt-mcp-adapter/src/CommonModules/Мсп_ТранспортСобытияКлиент/Module.bsl`
   - `tests/src/CommonModules/ОМ_Сервер/Module.bsl`
   - `tests/src/CommonModules/ОМ_ПротоколКлиент/Module.bsl`
   - `tests/src/CommonModules/ОМ_РеестрКлиент/Module.bsl`

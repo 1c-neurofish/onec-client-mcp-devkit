@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d68d946e-9cda-4ee1-ad4e-7d5efe0fafdf">
+  <name>Мсп_ИдентификацияСессии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Идентификация сессии</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Session identification</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Session identification</value>
+  </synonym>
+  <server>true</server>
+  <serverCall>true</serverCall>
+</mdclass:CommonModule>

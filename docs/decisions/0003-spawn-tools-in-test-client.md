@@ -2,7 +2,7 @@
 
 - Статус: accepted
 - Дата: 2026-05-04 (proposed) → 2026-05-05 (accepted после реализации этапов А/Б/В).
-- Связанные ADR: [ADR-0001 (архитектура провайдеров)](0001-client-mcp-provider-architecture.md), [ADR-0002 (запуск из командной строки)](0002-command-line-mcp-server-startup.md). Парный ADR — `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
+- Связанные ADR: [ADR-0001 (архитектура провайдеров)](0001-wt-mcp-adapter-provider-architecture.md), [ADR-0002 (запуск из командной строки)](0002-command-line-mcp-server-startup.md). Парный ADR — `web-transport-addin/docs/decisions/0005-transport-only-rust.md`.
 - Связанные документы: [`FORK_CHANGES.md`](../../FORK_CHANGES.md), [`docs/mcp-test-client/implementation-plan.md`](../mcp-test-client/implementation-plan.md), задача `docs/mcp-test-client/tasks/07-spawn-tools.md`.
 
 ## Контекст
@@ -12,7 +12,7 @@
 После архитектурного ревью обнаружено, что spawn-функциональность принципиально **прикладная**: запуск 1С-клиента — это бизнес-операция, не часть транспорта. Помещать её в `web-transport-addin` нарушает разделение слоёв:
 
 - **Транспортный слой** (`web-transport-addin`) — WS pump, reconnect, FFI.
-- **MCP-ядро** (`exts/client-mcp/`) — JSON-RPC, реестр tools/resources/prompts, маршрутизация.
+- **MCP-ядро** (`exts/wt-mcp-adapter/`) — JSON-RPC, реестр tools/resources/prompts, маршрутизация.
 - **Прикладной слой** (отдельные расширения, например `exts/test_client/`) — конкретные бизнес-операции, регистрируемые в реестре tools через `Мсп_РеестрКлиент.ЗарегистрироватьИнструмент`.
 
 В репозитории уже существует прецедент: `exts/test_client/CommonModules/Мсп_УправлениеТестКлиентом` управляет жизненным циклом локального тест-клиента 1С (запуск через `ЗапуститьПриложение`, подключение по TCP, остановка). Это документировано в `docs/mcp-test-client/` с проработанным API. То есть **архитектура уже допускает** размещение spawn-логики в прикладном расширении.
@@ -58,7 +58,7 @@ PID получается **не от tool'а spawn**, а из последующ
 
 Решение: **отдельного механизма `capabilities` не вводим.** В `session.register.params.tools` уже идёт массив с именами инструментов. Менеджер заменяет `find_spawner(host_id, "spawn")` на поиск сессии, в чьём каталоге tools есть имя `system_spawn_1c_client`. Поле `capabilities` в `SessionRecord` менеджера и в payload `session.register` помечается deprecated и удаляется на этапе В вместе с зачисткой `session_params.rs` (см. парный ADR-0005).
 
-Если расширение `test_client` не загружено — соответствующих tools в каталоге нет, и менеджер просто не находит исполнителя на этом хосте. Поведение функционально эквивалентно «отсутствию capability», но без второго регистра и без правок ядра `client-mcp`.
+Если расширение `test_client` не загружено — соответствующих tools в каталоге нет, и менеджер просто не находит исполнителя на этом хосте. Поведение функционально эквивалентно «отсутствию capability», но без второго регистра и без правок ядра `wt-mcp-adapter`.
 
 ### Жизненный цикл (child_exited заменяется heartbeat'ом)
 

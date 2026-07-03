@@ -66,7 +66,7 @@
 - Содержание:
   - Tools `system_spawn_1c_client` / `system_kill_pid` в `exts/test_client/`.
   - Allow-list бинарников/ключей + regex-валидация значений (защита от shell-injection).
-  - Механизм объявления capabilities из прикладного расширения (требует доработки ядра `client-mcp`).
+  - Механизм объявления capabilities из прикладного расширения (требует доработки ядра `wt-mcp-adapter`).
   - Удаление `addin.spawn` / `addin.kill` из Rust-компоненты после паритета.
 
 ## Заглушки

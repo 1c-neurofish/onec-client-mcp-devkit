@@ -11,9 +11,9 @@ builder: DESIGNER
 connection: 'Srvr="onec-infra";Ref="dev_tech"'
 
 source-set:
-  - name: client_mcp
+  - name: wt_mcp_adapter
     type: EXTENSION
-    path: 'exts/client-mcp'
+    path: 'exts/wt-mcp-adapter'
 
   - name: test_client
     type: EXTENSION

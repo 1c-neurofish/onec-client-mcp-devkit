@@ -8,7 +8,7 @@ Upstream работает только в режиме «локальный HTTP
 
 ## Bundle компоненты `AddIn.WebTransport` 0.7.0
 
-`exts/client-mcp/src/CommonTemplates/Мсп_webTransport/Template.addin` обновлён с upstream `alkoleft/web-transport-addin@0.6.4` на собственный билд `SteelMorgan/web-transport-addin@7e76820` (0.7.0):
+`exts/wt-mcp-adapter/src/CommonTemplates/Мсп_webTransport/Template.addin` обновлён с upstream `alkoleft/web-transport-addin@0.6.4` на собственный билд `SteelMorgan/web-transport-addin@7e76820` (0.7.0):
 
 - Полная матрица ОС: Win x32+x64, Linux x32+x64, macOS x64 (versioned filenames).
 - Новый класс `AddIn.WebTransport.session` (WS-клиент к session-manager).
@@ -107,7 +107,7 @@ BSL-сторона (`Мсп_ТранспортСессионКлиент.Module.
 | Слой | Репозиторий / каталог | Ответственность |
 |------|------------------------|-----------------|
 | Транспорт | `web-transport-addin` (Rust) | WS pump, reconnect, FFI |
-| MCP-ядро | `exts/client-mcp/` (этот репозиторий) | JSON-RPC, реестр tools/resources/prompts, маршрутизация |
+| MCP-ядро | `exts/wt-mcp-adapter/` (этот репозиторий) | JSON-RPC, реестр tools/resources/prompts, маршрутизация |
 | Прикладные расширения | `exts/test_client/`, `exts/spawn_tools/`, ... (этот репозиторий) | Бизнес-операции, регистрируемые в реестре tools |
 
 В прикладных расширениях уже есть прецедент: `exts/test_client/CommonModules/Мсп_УправлениеТестКлиентом` управляет жизненным циклом локального тест-клиента 1С через `ЗапуститьПриложение`. Spawn/Kill tools для удалённого порождения дочерних 1С-клиентов размещаются по тому же принципу.
@@ -119,7 +119,7 @@ BSL-сторона (`Мсп_ТранспортСессионКлиент.Module.
 - (опц.) Tool `system_list_children` — если будет согласован контракт.
 - Защита: allow-list бинарников и ключей, regex-валидация значений, запрет shell metacharacters.
 
-### Что меняется в ядре `exts/client-mcp/`
+### Что меняется в ядре `exts/wt-mcp-adapter/`
 
 - Точечная правка: механизм объявления capabilities от прикладных расширений. Сейчас `["spawn","kill"]` зашиты в Rust; после рефакторинга расширение `test_client` объявляет capabilities само через `Мсп_РеестрКлиент`. Подробнее — в `docs/mcp-test-client/tasks/07-spawn-tools.md` (раздел «Объявление capabilities»).
 
