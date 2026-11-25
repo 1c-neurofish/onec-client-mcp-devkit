@@ -31,6 +31,7 @@
   <subsystems>Subsystem.Мсп_Провайдеры</subsystems>
   <commonTemplates>CommonTemplate.Мсп_webTransport</commonTemplates>
   <commonModules>CommonModule.Мсп_ГлобальныеОбработчикиКлиент</commonModules>
+  <commonModules>CommonModule.Мсп_ЖурналРегистрацииСервер</commonModules>
   <commonModules>CommonModule.Мсп_ЗадачиКлиент</commonModules>
   <commonModules>CommonModule.Мсп_ИнструментИнфоИБКлиент</commonModules>
   <commonModules>CommonModule.Мсп_Коллекции</commonModules>
